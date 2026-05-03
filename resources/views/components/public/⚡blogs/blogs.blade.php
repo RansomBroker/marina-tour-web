@@ -20,7 +20,7 @@
                         :date="$blog['date']"
                         :title="$blog['title']"
                         :description="$blog['description']"
-                        :url="$blog['url']"
+                        :slug="$blog['slug']"
                     />
                 @endforeach
             </div>

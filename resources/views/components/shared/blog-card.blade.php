@@ -1,4 +1,4 @@
-@props(['image', 'category', 'date', 'author' => 'Smith Bali Travel', 'title', 'description', 'url'])
+@props(['image', 'category', 'date', 'author' => 'Smith Bali Travel', 'title', 'description', 'slug'])
 
 <div class="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-border/50 transition-all duration-300" style="opacity: 1; transform: none;">
     <div class="relative h-48 overflow-hidden">
@@ -16,7 +16,7 @@
         </div>
         <h3 class="font-heading font-bold text-base text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">{{ $title }}</h3>
         <p class="text-sm text-muted-foreground font-body leading-relaxed mb-4 line-clamp-2">{{ $description }}</p>
-        <a class="inline-flex items-center gap-1.5 text-sm font-semibold font-body text-primary hover:text-accent transition-colors" href="{{ $url }}">Read More
+        <a class="inline-flex items-center gap-1.5 text-sm font-semibold font-body text-primary hover:text-accent transition-colors" href="/blogs/detail/{{ $slug }}">Read More
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
         </a>
     </div>

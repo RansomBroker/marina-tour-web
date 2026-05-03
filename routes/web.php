@@ -21,3 +21,7 @@ Route::get('/contact-us', function() {
 Route::get('/tour-packages/detail/{slug}', function($slug) {
     return view('pages.tour-detail', compact('slug'));
 });
+
+Route::get('/blogs/detail/{slug}', function($slug) {
+    return view('pages.blog-detail', compact('slug'));
+});
