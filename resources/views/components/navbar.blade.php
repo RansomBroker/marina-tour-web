@@ -18,7 +18,7 @@
                 <a href="/" class="text-white group-[.scrolled]/nav:text-gray-800 bg-white/20 group-[.scrolled]/nav:bg-gray-100 px-6 py-2.5 rounded-xl text-sm font-medium backdrop-blur-md transition-colors duration-300">Home</a>
                 <a href="/tour-packages" class="text-white/90 group-[.scrolled]/nav:text-gray-600 hover:text-white group-[.scrolled]/nav:hover:text-orange-500 hover:bg-white/10 group-[.scrolled]/nav:hover:bg-gray-100 px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-300">Tour Packages</a>
                 <a href="/blogs" class="text-white/90 group-[.scrolled]/nav:text-gray-600 hover:text-white group-[.scrolled]/nav:hover:text-orange-500 hover:bg-white/10 group-[.scrolled]/nav:hover:bg-gray-100 px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-300">Blog</a>
-                <a href="/contact" class="text-white/90 group-[.scrolled]/nav:text-gray-600 hover:text-white group-[.scrolled]/nav:hover:text-orange-500 hover:bg-white/10 group-[.scrolled]/nav:hover:bg-gray-100 px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-300">Contact Us</a>
+                <a href="/contact-us" class="text-white/90 group-[.scrolled]/nav:text-gray-600 hover:text-white group-[.scrolled]/nav:hover:text-orange-500 hover:bg-white/10 group-[.scrolled]/nav:hover:bg-gray-100 px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-300">Contact Us</a>
             </div>
 
             {{-- CTA --}}
@@ -45,7 +45,7 @@
             <a href="/" class="text-white group-[.scrolled]/nav:text-gray-800 text-sm font-medium transition-colors">Home</a>
             <a href="/tour-packages" class="text-white group-[.scrolled]/nav:text-gray-800 text-sm font-medium transition-colors">Tour Packages</a>
             <a href="/blogs" class="text-white group-[.scrolled]/nav:text-gray-800 text-sm font-medium transition-colors">Blog</a>
-            <a href="/contact" class="text-white group-[.scrolled]/nav:text-gray-800 text-sm font-medium transition-colors">Contact Us</a>
+            <a href="/contact-us" class="text-white group-[.scrolled]/nav:text-gray-800 text-sm font-medium transition-colors">Contact Us</a>
             <a href="/tour-packages" class="bg-orange-500 text-white text-sm font-medium px-5 py-2.5 rounded-full text-center">Book Now</a>
         </div>
     </div>

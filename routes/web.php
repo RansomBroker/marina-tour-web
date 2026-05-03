@@ -13,3 +13,7 @@ Route::get('/tour-packages', function () {
 Route::get('/blogs', function () {
     return view('pages.blogs');
 });
+
+Route::get('/contact-us', function() {
+    return view('pages.contact-us');
+});
