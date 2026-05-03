@@ -6,6 +6,7 @@ new class extends Component
 {
     public array $packages = [
         [
+            'slug' => 'honeymoon-romantic-bali-tour',
             'image' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80',
             'title' => 'Honeymoon Romantic Bali Tour',
             'category' => 'Honeymoon Tours',
@@ -14,6 +15,7 @@ new class extends Component
             'duration' => 'Full Day'
         ],
         [
+            'slug' => 'bedugul-tanah-lot-tour',
             'image' => 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&q=80',
             'title' => 'Bedugul & Tanah Lot Tour',
             'category' => 'Nature Tours',
@@ -22,6 +24,7 @@ new class extends Component
             'duration' => 'Full Day'
         ],
         [
+            'slug' => 'atv-adventure-tour',
             'image' => 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80',
             'title' => 'ATV Adventure Tour',
             'category' => 'Adventure Tours',
@@ -30,6 +33,7 @@ new class extends Component
             'duration' => 'Half Day'
         ],
         [
+            'slug' => 'bali-instagram-tour',
             'image' => 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80',
             'title' => 'Bali Instagram Tour',
             'category' => 'Cultural Tours',
@@ -38,6 +42,7 @@ new class extends Component
             'duration' => 'Full Day'
         ],
         [
+            'slug' => 'nusa-penida-west-tour',
             'image' => 'https://images.unsplash.com/photo-1570789210967-2cac24f04879?w=800&q=80',
             'title' => 'Nusa Penida West Tour',
             'category' => 'Island Tours',
@@ -46,6 +51,7 @@ new class extends Component
             'duration' => 'Full Day'
         ],
         [
+            'slug' => 'kintamani-volcano-tour',
             'image' => 'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=800&q=80',
             'title' => 'Kintamani Volcano Tour',
             'category' => 'Nature Tours',

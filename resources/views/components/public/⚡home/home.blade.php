@@ -104,6 +104,7 @@
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <x-shared.tour-card 
+                    slug="honeymoon-romantic-bali-tour"
                     image="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&amp;q=80"
                     title="Honeymoon Romantic Bali Tour"
                     category="Honeymoon Tours"
@@ -113,6 +114,7 @@
                 />
                 
                 <x-shared.tour-card 
+                    slug="bedugul-tanah-lot-tour"
                     image="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&amp;q=80"
                     title="Bedugul &amp; Tanah Lot Tour"
                     category="Nature Tours"
@@ -122,6 +124,7 @@
                 />
 
                 <x-shared.tour-card 
+                    slug="atv-adventure-tour"
                     image="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&amp;q=80"
                     title="ATV Adventure Tour"
                     category="Adventure Tours"
@@ -131,6 +134,7 @@
                 />
 
                 <x-shared.tour-card 
+                    slug="bali-instagram-tour"
                     image="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&amp;q=80"
                     title="Bali Instagram Tour"
                     category="Cultural Tours"
@@ -140,6 +144,7 @@
                 />
 
                 <x-shared.tour-card 
+                    slug="nusa-penida-west-tour"
                     image="https://images.unsplash.com/photo-1570789210967-2cac24f04879?w=800&amp;q=80"
                     title="Nusa Penida West Tour"
                     category="Island Tours"
@@ -149,6 +154,7 @@
                 />
 
                 <x-shared.tour-card 
+                    slug="kintamani-volcano-tour"
                     image="https://images.unsplash.com/photo-1604999333679-b86d54738315?w=800&amp;q=80"
                     title="Kintamani Volcano Tour"
                     category="Nature Tours"

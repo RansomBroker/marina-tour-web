@@ -17,3 +17,7 @@ Route::get('/blogs', function () {
 Route::get('/contact-us', function() {
     return view('pages.contact-us');
 });
+
+Route::get('/tour-packages/detail/{slug}', function($slug) {
+    return view('pages.tour-detail', compact('slug'));
+});
