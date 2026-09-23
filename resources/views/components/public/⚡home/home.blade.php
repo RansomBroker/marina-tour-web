@@ -19,7 +19,7 @@
                 Private tours, cultural experiences, island adventures, and unforgettable memories — all crafted just for you.
             </p>
             <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4" style="opacity: 1; transform: none;">
-                <a href="/Packages">
+                <a href="/tour-packages">
                     <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl font-body font-semibold px-8 h-14 text-base shadow-xl shadow-accent/25">
                         Explore Packages
                         <x-icons.arrow-right class="lucide lucide-arrow-right w-5 h-5 ml-2" />
@@ -103,68 +103,20 @@
                 <p class="mt-4 text-base md:text-lg max-w-2xl leading-relaxed font-body mx-auto text-muted-foreground">Handpicked experiences for every type of traveler — from culture lovers to adventure seekers.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <x-shared.tour-card 
-                    slug="honeymoon-romantic-bali-tour"
-                    image="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&amp;q=80"
-                    title="Honeymoon Romantic Bali Tour"
-                    category="Honeymoon Tours"
-                    price="From $90/couple"
-                    description="Create unforgettable memories with your loved one on a romantic journey through Bali's most scenic and intimate locations."
-                    duration="Full Day"
-                />
-                
-                <x-shared.tour-card 
-                    slug="bedugul-tanah-lot-tour"
-                    image="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&amp;q=80"
-                    title="Bedugul &amp; Tanah Lot Tour"
-                    category="Nature Tours"
-                    price="From $48/person"
-                    description="Experience the serene beauty of Bali's highlands and witness the iconic Tanah Lot temple perched on a dramatic ocean rock at sunset."
-                    duration="Full Day"
-                />
-
-                <x-shared.tour-card 
-                    slug="atv-adventure-tour"
-                    image="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&amp;q=80"
-                    title="ATV Adventure Tour"
-                    category="Adventure Tours"
-                    price="From $65/person"
-                    description="Get your adrenaline pumping on an exciting ATV ride through jungles, tunnels, rice fields, and waterfalls in Bali's countryside."
-                    duration="Half Day"
-                />
-
-                <x-shared.tour-card 
-                    slug="bali-instagram-tour"
-                    image="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&amp;q=80"
-                    title="Bali Instagram Tour"
-                    category="Cultural Tours"
-                    price="From $55/person"
-                    description="Visit Bali's most photogenic spots including the Gates of Heaven, water palaces, and hidden waterfalls for the ultimate photo experience."
-                    duration="Full Day"
-                />
-
-                <x-shared.tour-card 
-                    slug="nusa-penida-west-tour"
-                    image="https://images.unsplash.com/photo-1570789210967-2cac24f04879?w=800&amp;q=80"
-                    title="Nusa Penida West Tour"
-                    category="Island Tours"
-                    price="From $75/person"
-                    description="Explore the stunning island of Nusa Penida with its dramatic cliffs, crystal-clear waters, and Instagram-famous viewpoints."
-                    duration="Full Day"
-                />
-
-                <x-shared.tour-card 
-                    slug="kintamani-volcano-tour"
-                    image="https://images.unsplash.com/photo-1604999333679-b86d54738315?w=800&amp;q=80"
-                    title="Kintamani Volcano Tour"
-                    category="Nature Tours"
-                    price="From $50/person"
-                    description="Discover the breathtaking views of Mount Batur volcano, visit traditional coffee plantations, and explore scenic rice terraces."
-                    duration="Full Day"
-                />
+                @foreach($packages as $package)
+                    <x-shared.tour-card 
+                        :slug="$package['slug']"
+                        :image="$package['image']"
+                        :title="$package['title']"
+                        :category="$package['category']"
+                        :price="$package['price']"
+                        :description="$package['description']"
+                        :duration="$package['duration']"
+                    />
+                @endforeach
             </div>
             <div class="text-center mt-10">
-                <a href="/Packages">
+                <a href="/tour-packages">
                     <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-10 rounded-xl font-body font-semibold px-8">
                         View All Packages 
                         <x-icons.arrow-right class="lucide lucide-arrow-right w-5 h-5 ml-2" />
@@ -274,7 +226,7 @@
                     date="March 5, 2026"
                     title="Best Time to Visit Bali for Your Dream Vacation"
                     description="Planning a Bali trip? Learn about the best seasons, weather patterns, and peak times to visit the Island of the Gods for an unforgettable experience."
-                    url="/BlogPost?id=best-time-to-visit-bali"
+                    slug="best-time-to-visit-bali"
                 />
                 
                 <x-shared.blog-card 
@@ -283,7 +235,7 @@
                     date="February 28, 2026"
                     title="Top 10 Places to Visit in Ubud"
                     description="Ubud is the cultural heart of Bali. Discover the must-visit temples, rice terraces, art galleries, and hidden gems that make Ubud truly special."
-                    url="/BlogPost?id=top-10-places-ubud"
+                    slug="top-10-places-ubud"
                 />
 
                 <x-shared.blog-card 
@@ -292,11 +244,11 @@
                     date="February 20, 2026"
                     title="What to Pack for a Bali Trip"
                     description="Don't know what to bring? Here's a complete packing guide for Bali with tips on clothing, essentials, and what to leave at home."
-                    url="/BlogPost?id=what-to-pack-bali"
+                    slug="what-to-pack-bali"
                 />
             </div>
             <div class="text-center mt-10">
-                <a href="/Blog">
+                <a href="/blogs">
                     <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-10 rounded-xl font-body font-semibold px-8">View All Articles 
                         <x-icons.arrow-right class="lucide lucide-arrow-right w-5 h-5 ml-2" />
                     </button>
@@ -321,7 +273,7 @@
                             <x-icons.message-circle class="lucide lucide-message-circle w-5 h-5 mr-2" />Book via WhatsApp
                         </button>
                     </a>
-                    <a href="/Contact">
+                    <a href="/contact-us">
                         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-transparent shadow-sm hover:text-accent-foreground border-white/30 text-white hover:bg-white/10 rounded-xl font-body font-semibold px-8 h-14 text-base">Contact Us
                             <x-icons.arrow-right class="lucide lucide-arrow-right w-5 h-5 ml-2" />
                         </button>

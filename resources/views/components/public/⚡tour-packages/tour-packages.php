@@ -1,63 +1,57 @@
 <?php
 
 use Livewire\Component;
+use App\Models\TourPackage;
+use App\Models\TourCategory;
 
 new class extends Component
 {
-    public array $packages = [
-        [
-            'slug' => 'honeymoon-romantic-bali-tour',
-            'image' => 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80',
-            'title' => 'Honeymoon Romantic Bali Tour',
-            'category' => 'Honeymoon Tours',
-            'price' => 'From $90/couple',
-            'description' => 'Create unforgettable memories with your loved one on a romantic journey through Bali\'s most scenic and intimate locations.',
-            'duration' => 'Full Day'
-        ],
-        [
-            'slug' => 'bedugul-tanah-lot-tour',
-            'image' => 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&q=80',
-            'title' => 'Bedugul & Tanah Lot Tour',
-            'category' => 'Nature Tours',
-            'price' => 'From $48/person',
-            'description' => 'Experience the serene beauty of Bali\'s highlands and witness the iconic Tanah Lot temple perched on a dramatic ocean rock at sunset.',
-            'duration' => 'Full Day'
-        ],
-        [
-            'slug' => 'atv-adventure-tour',
-            'image' => 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80',
-            'title' => 'ATV Adventure Tour',
-            'category' => 'Adventure Tours',
-            'price' => 'From $65/person',
-            'description' => 'Get your adrenaline pumping on an exciting ATV ride through jungles, tunnels, rice fields, and waterfalls in Bali\'s countryside.',
-            'duration' => 'Half Day'
-        ],
-        [
-            'slug' => 'bali-instagram-tour',
-            'image' => 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80',
-            'title' => 'Bali Instagram Tour',
-            'category' => 'Cultural Tours',
-            'price' => 'From $55/person',
-            'description' => 'Visit Bali\'s most photogenic spots including the Gates of Heaven, water palaces, and hidden waterfalls for the ultimate photo experience.',
-            'duration' => 'Full Day'
-        ],
-        [
-            'slug' => 'nusa-penida-west-tour',
-            'image' => 'https://images.unsplash.com/photo-1570789210967-2cac24f04879?w=800&q=80',
-            'title' => 'Nusa Penida West Tour',
-            'category' => 'Island Tours',
-            'price' => 'From $75/person',
-            'description' => 'Explore the stunning island of Nusa Penida with its dramatic cliffs, crystal-clear waters, and Instagram-famous viewpoints.',
-            'duration' => 'Full Day'
-        ],
-        [
-            'slug' => 'kintamani-volcano-tour',
-            'image' => 'https://images.unsplash.com/photo-1604999333679-b86d54738315?w=800&q=80',
-            'title' => 'Kintamani Volcano Tour',
-            'category' => 'Nature Tours',
-            'price' => 'From $50/person',
-            'description' => 'Discover the breathtaking views of Mount Batur volcano, visit traditional coffee plantations, and explore scenic rice terraces.',
-            'duration' => 'Full Day'
-        ]
-    ];
+    public string $search = '';
+    public string $selectedCategory = 'all';
+
+    public function selectCategory(string $categoryName): void
+    {
+        $this->selectedCategory = $categoryName;
+    }
+
+    public function with(): array
+    {
+        $query = TourPackage::with('category');
+
+        if (!empty($this->search)) {
+            $query->where(function($q) {
+                $q->where('name', 'like', '%' . $this->search . '%')
+                  ->orWhere('description', 'like', '%' . $this->search . '%');
+            });
+        }
+
+        if ($this->selectedCategory !== 'all') {
+            $query->whereHas('category', function ($q) {
+                $q->where('name', $this->selectedCategory);
+            });
+        }
+
+        $packages = $query->latest()->get()->map(function ($package) {
+            $image = !empty($package->images) 
+                ? asset('storage/' . $package->images[0]) 
+                : 'https://images.unsplash.com/photo-1573790387438-4da905039392?w=800&q=80';
+            
+            return [
+                'slug' => $package->slug,
+                'image' => $image,
+                'title' => $package->name,
+                'category' => $package->category->name ?? 'Uncategorized',
+                'price' => 'IDR ' . number_format($package->price, 0, ',', '.'),
+                'description' => $package->description,
+                'duration' => $package->duration
+            ];
+        })->toArray();
+
+        $categories = TourCategory::pluck('name')->toArray();
+
+        return [
+            'packages' => $packages,
+            'categories' => $categories,
+        ];
+    }
 };

@@ -15,10 +15,10 @@
         <div class="flex items-center gap-4 lg:gap-8">
             {{-- Nav Links --}}
             <div class="hidden md:flex items-center gap-2">
-                <a href="/" class="text-white group-[.scrolled]/nav:text-gray-800 bg-white/20 group-[.scrolled]/nav:bg-gray-100 px-6 py-2.5 rounded-xl text-sm font-medium backdrop-blur-md transition-colors duration-300">Home</a>
-                <a href="/tour-packages" class="text-white/90 group-[.scrolled]/nav:text-gray-600 hover:text-white group-[.scrolled]/nav:hover:text-orange-500 hover:bg-white/10 group-[.scrolled]/nav:hover:bg-gray-100 px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-300">Tour Packages</a>
-                <a href="/blogs" class="text-white/90 group-[.scrolled]/nav:text-gray-600 hover:text-white group-[.scrolled]/nav:hover:text-orange-500 hover:bg-white/10 group-[.scrolled]/nav:hover:bg-gray-100 px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-300">Blog</a>
-                <a href="/contact-us" class="text-white/90 group-[.scrolled]/nav:text-gray-600 hover:text-white group-[.scrolled]/nav:hover:text-orange-500 hover:bg-white/10 group-[.scrolled]/nav:hover:bg-gray-100 px-6 py-2.5 rounded-full text-sm font-medium transition-colors duration-300">Contact Us</a>
+                <a href="/" class="{{ request()->is('/') ? 'text-white group-[.scrolled]/nav:text-gray-800 bg-white/20 group-[.scrolled]/nav:bg-gray-100 rounded-xl' : 'text-white/90 group-[.scrolled]/nav:text-gray-600 hover:text-white group-[.scrolled]/nav:hover:text-orange-500 hover:bg-white/10 group-[.scrolled]/nav:hover:bg-gray-100 rounded-full' }} px-6 py-2.5 text-sm font-medium backdrop-blur-md transition-colors duration-300">Home</a>
+                <a href="/tour-packages" class="{{ request()->is('tour-packages*') ? 'text-white group-[.scrolled]/nav:text-gray-800 bg-white/20 group-[.scrolled]/nav:bg-gray-100 rounded-xl' : 'text-white/90 group-[.scrolled]/nav:text-gray-600 hover:text-white group-[.scrolled]/nav:hover:text-orange-500 hover:bg-white/10 group-[.scrolled]/nav:hover:bg-gray-100 rounded-full' }} px-6 py-2.5 text-sm font-medium backdrop-blur-md transition-colors duration-300">Tour Packages</a>
+                <a href="/blogs" class="{{ request()->is('blogs*') ? 'text-white group-[.scrolled]/nav:text-gray-800 bg-white/20 group-[.scrolled]/nav:bg-gray-100 rounded-xl' : 'text-white/90 group-[.scrolled]/nav:text-gray-600 hover:text-white group-[.scrolled]/nav:hover:text-orange-500 hover:bg-white/10 group-[.scrolled]/nav:hover:bg-gray-100 rounded-full' }} px-6 py-2.5 text-sm font-medium backdrop-blur-md transition-colors duration-300">Blog</a>
+                <a href="/contact-us" class="{{ request()->is('contact-us*') ? 'text-white group-[.scrolled]/nav:text-gray-800 bg-white/20 group-[.scrolled]/nav:bg-gray-100 rounded-xl' : 'text-white/90 group-[.scrolled]/nav:text-gray-600 hover:text-white group-[.scrolled]/nav:hover:text-orange-500 hover:bg-white/10 group-[.scrolled]/nav:hover:bg-gray-100 rounded-full' }} px-6 py-2.5 text-sm font-medium backdrop-blur-md transition-colors duration-300">Contact Us</a>
             </div>
 
             {{-- CTA --}}
@@ -42,10 +42,10 @@
     {{-- Mobile Menu --}}
     <div id="mobile-menu" class="hidden md:hidden mt-4 glass group-[.scrolled]/nav:bg-white group-[.scrolled]/nav:border group-[.scrolled]/nav:border-gray-100 rounded-2xl p-5 transition-colors duration-300">
         <div class="flex flex-col gap-4">
-            <a href="/" class="text-white group-[.scrolled]/nav:text-gray-800 text-sm font-medium transition-colors">Home</a>
-            <a href="/tour-packages" class="text-white group-[.scrolled]/nav:text-gray-800 text-sm font-medium transition-colors">Tour Packages</a>
-            <a href="/blogs" class="text-white group-[.scrolled]/nav:text-gray-800 text-sm font-medium transition-colors">Blog</a>
-            <a href="/contact-us" class="text-white group-[.scrolled]/nav:text-gray-800 text-sm font-medium transition-colors">Contact Us</a>
+            <a href="/" class="{{ request()->is('/') ? 'text-accent group-[.scrolled]/nav:text-orange-500 font-bold' : 'text-white group-[.scrolled]/nav:text-gray-800' }} text-sm font-medium transition-colors">Home</a>
+            <a href="/tour-packages" class="{{ request()->is('tour-packages*') ? 'text-accent group-[.scrolled]/nav:text-orange-500 font-bold' : 'text-white group-[.scrolled]/nav:text-gray-800' }} text-sm font-medium transition-colors">Tour Packages</a>
+            <a href="/blogs" class="{{ request()->is('blogs*') ? 'text-accent group-[.scrolled]/nav:text-orange-500 font-bold' : 'text-white group-[.scrolled]/nav:text-gray-800' }} text-sm font-medium transition-colors">Blog</a>
+            <a href="/contact-us" class="{{ request()->is('contact-us*') ? 'text-accent group-[.scrolled]/nav:text-orange-500 font-bold' : 'text-white group-[.scrolled]/nav:text-gray-800' }} text-sm font-medium transition-colors">Contact Us</a>
             <a href="/tour-packages" class="bg-orange-500 text-white text-sm font-medium px-5 py-2.5 rounded-full text-center">Book Now</a>
         </div>
     </div>

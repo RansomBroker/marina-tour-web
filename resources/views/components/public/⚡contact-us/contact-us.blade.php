@@ -51,67 +51,93 @@
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                 <div class="lg:col-span-3">
                     <div class="bg-card rounded-2xl p-6 md:p-8 shadow-sm border border-border/50">
-                        <h2 class="text-2xl font-heading font-bold text-foreground mb-2">Send Us an Inquiry</h2>
-                        <p class="text-sm text-muted-foreground font-body mb-6">Fill out the form below and we'll get back to you within a few hours.</p>
-                        <form class="space-y-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="space-y-1.5">
-                                    <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-body text-sm">Full Name *</label>
-                                    <input class="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm rounded-xl font-body h-11" required="" placeholder="Your full name" value="">
+                        @if ($isSuccess)
+                            <div class="text-center py-10 space-y-6">
+                                <div class="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary shadow-inner">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="animate-bounce"><polyline points="20 6 9 17 4 12"/></svg>
                                 </div>
-                                <div class="space-y-1.5">
-                                    <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-body text-sm">Email *</label>
-                                    <input type="email" class="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm rounded-xl font-body h-11" required="" placeholder="your@email.com" value="">
+                                <div class="space-y-2">
+                                    <h3 class="text-2xl font-heading font-bold text-foreground">Inquiry Sent Successfully!</h3>
+                                    <p class="text-sm text-muted-foreground font-body max-w-sm mx-auto leading-relaxed">
+                                        Thank you! We've received your request. Our travel experts are reviewing your details and will contact you via WhatsApp or Email within a few hours.
+                                    </p>
                                 </div>
-                            </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="space-y-1.5">
-                                    <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-body text-sm">WhatsApp Number</label>
-                                    <input class="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm rounded-xl font-body h-11" placeholder="+62 xxx xxx xxxx" value="">
-                                </div>
-                                <div class="space-y-1.5">
-                                    <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-body text-sm">Travel Date</label>
-                                    <input type="date" class="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm rounded-xl font-body h-11" value="">
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="space-y-1.5">
-                                    <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-body text-sm">Number of People</label>
-                                    <input type="number" class="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm rounded-xl font-body h-11" min="1" placeholder="2" value="">
-                                </div>
-                                <div class="space-y-1.5">
-                                    <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-body text-sm">Interested Package</label>
-                                    <select class="flex w-full items-center justify-between whitespace-nowrap border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background data-[placeholder]:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 rounded-xl font-body h-11">
-                                        <option value="">Select a package</option>
-                                        <option value="Ubud Highlights Tour">Ubud Highlights Tour</option>
-                                        <option value="Uluwatu Sunset Tour">Uluwatu Sunset Tour</option>
-                                        <option value="Kintamani Volcano Tour">Kintamani Volcano Tour</option>
-                                        <option value="Nusa Penida West Tour">Nusa Penida West Tour</option>
-                                        <option value="Bali Instagram Tour">Bali Instagram Tour</option>
-                                        <option value="ATV Adventure Tour">ATV Adventure Tour</option>
-                                        <option value="Bedugul &amp; Tanah Lot Tour">Bedugul &amp; Tanah Lot Tour</option>
-                                        <option value="Honeymoon Romantic Bali Tour">Honeymoon Romantic Bali Tour</option>
-                                        <option value="Custom Tour">Custom Tour</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="space-y-1.5">
-                                <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-body text-sm">Message</label>
-                                <textarea class="flex w-full border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm rounded-xl font-body min-h-28" placeholder="Tell us about your dream Bali trip..."></textarea>
-                            </div>
-                            <div class="flex gap-3 pt-2">
-                                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground shadow py-2 bg-primary hover:bg-primary/90 rounded-xl font-body font-semibold h-12 px-8" type="submit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send w-4 h-4 mr-2"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg> 
-                                    Send Inquiry
-                                </button>
-                                <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
-                                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground px-4 py-2 rounded-xl font-body font-semibold h-12" type="button">
-                                        <x-icons.message-circle class="lucide lucide-message-circle w-4 h-4 mr-2" />
-                                        Chat via WhatsApp
+                                <div class="pt-2">
+                                    <button 
+                                        type="button" 
+                                        wire:click="$set('isSuccess', false)" 
+                                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg h-11 px-8 rounded-xl font-body text-sm font-semibold"
+                                    >
+                                        Send Another Inquiry
                                     </button>
-                                </a>
+                                </div>
                             </div>
-                        </form>
+                        @else
+                            <h2 class="text-2xl font-heading font-bold text-foreground mb-2">Send Us an Inquiry</h2>
+                            <p class="text-sm text-muted-foreground font-body mb-6">Fill out the form below and we'll get back to you within a few hours.</p>
+                            <form wire:submit.prevent="submitInquiry" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="space-y-1.5">
+                                        <label class="font-medium font-body text-sm text-foreground">Full Name *</label>
+                                        <input 
+                                            type="text" 
+                                            wire:model="name"
+                                            class="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-xl font-body h-11" 
+                                            required 
+                                            placeholder="Your full name"
+                                        >
+                                        @error('name') <span class="text-xs text-red-500 font-body">{{ $message }}</span> @enderror
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <label class="font-medium font-body text-sm text-foreground">Email *</label>
+                                        <input 
+                                            type="email" 
+                                            wire:model="email"
+                                            class="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-xl font-body h-11" 
+                                            required 
+                                            placeholder="your@email.com"
+                                        >
+                                        @error('email') <span class="text-xs text-red-500 font-body">{{ $message }}</span> @enderror
+                                    </div>
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="font-medium font-body text-sm text-foreground">WhatsApp Number *</label>
+                                    <input 
+                                        type="text" 
+                                        wire:model="whatsapp_number"
+                                        class="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-xl font-body h-11" 
+                                        required 
+                                        placeholder="+62 xxx xxx xxxx"
+                                    >
+                                    @error('whatsapp_number') <span class="text-xs text-red-500 font-body">{{ $message }}</span> @enderror
+                                </div>
+                                <div class="space-y-1.5">
+                                    <label class="font-medium font-body text-sm text-foreground">Message *</label>
+                                    <textarea 
+                                        wire:model="message"
+                                        class="flex w-full border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-xl font-body min-h-28" 
+                                        required 
+                                        placeholder="How can we help you plan your dream Bali trip?"
+                                    ></textarea>
+                                    @error('message') <span class="text-xs text-red-500 font-body">{{ $message }}</span> @enderror
+                                </div>
+                                <div class="flex gap-3 pt-2">
+                                    <button 
+                                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-primary hover:bg-primary/90 text-primary-foreground shadow rounded-xl font-body font-semibold h-12 px-8" 
+                                        type="submit"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send w-4 h-4 mr-2"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg> 
+                                        Send Inquiry
+                                    </button>
+                                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
+                                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground px-4 py-2 rounded-xl font-body font-semibold h-12" type="button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2 text-primary"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                                            Chat via WhatsApp
+                                        </button>
+                                    </a>
+                                </div>
+                            </form>
+                        @endif
                     </div>
                 </div>
                 <div class="lg:col-span-2">

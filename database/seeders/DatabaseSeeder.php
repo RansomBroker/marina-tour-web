@@ -13,11 +13,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::updateOrCreate(
+            ['email' => 'admin@smithtravelbali.com'],
+            [
+                'name' => 'Admin Smith Travel',
+                'password' => bcrypt('password123'),
+                'is_admin' => true,
+            ]
+        );
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+            TourCategorySeeder::class,
+            TourPackageSeeder::class,
+            BlogSeeder::class,
         ]);
     }
 }
