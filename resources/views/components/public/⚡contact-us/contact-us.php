@@ -34,7 +34,7 @@ new class extends Component
 
         // Send email to admin
         try {
-            $adminEmail = env('ADMIN_EMAIL', 'admin@smithtravelbali.com');
+            $adminEmail = \App\Models\Setting::get('admin_email', env('ADMIN_EMAIL', 'Kadekekahospitality@gmail.com'));
             $mailContent = "New Inquiry Received!\n\n" .
                           "• Inquiry ID: #{$inquiry->id}\n" .
                           "• Customer Name: {$this->name}\n" .

@@ -272,7 +272,10 @@
                             >
                                 Book This Tour
                             </button>
-                            <a href="https://wa.me/6281234567890?text={{ urlencode('Hi! I have a question about the ' . $tour['title']) }}" target="_blank" rel="noopener noreferrer" class="block w-full">
+                            @php
+                                $tourWaNumber = preg_replace('/[^0-9]/', '', \App\Models\Setting::get('whatsapp_number', '6281234567890'));
+                            @endphp
+                            <a href="https://wa.me/{{ $tourWaNumber }}?text={{ urlencode('Hi! I have a question about the ' . $tour['title']) }}" target="_blank" rel="noopener noreferrer" class="block w-full">
                                 <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-base transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground hover:border-accent px-8 py-3 w-full rounded-2xl font-body font-bold h-12">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mr-1 text-primary"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                                     Ask via WhatsApp

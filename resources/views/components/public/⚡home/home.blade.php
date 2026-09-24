@@ -25,7 +25,10 @@
                         <x-icons.arrow-right class="lucide lucide-arrow-right w-5 h-5 ml-2" />
                     </button>
                 </a>
-                <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
+                @php
+                    $homeWa = preg_replace('/[^0-9]/', '', \App\Models\Setting::get('whatsapp_number', '6281234567890'));
+                @endphp
+                <a href="https://wa.me/{{ $homeWa }}" target="_blank" rel="noopener noreferrer">
                     <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-transparent shadow-sm hover:text-accent-foreground border-white/30 text-white hover:bg-white/10 rounded-xl font-body font-semibold px-8 h-14 text-base backdrop-blur-sm">
                         <x-icons.message-circle class="lucide lucide-message-circle w-5 h-5 mr-2" />
                         Chat on WhatsApp
@@ -268,7 +271,7 @@
                 <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">Ready to Explore Bali?</h2>
                 <p class="text-lg text-white/70 font-body max-w-xl mx-auto mb-10">Let us help you plan your perfect Bali holiday. Contact us today and start your dream vacation.</p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/{{ $homeWa }}" target="_blank" rel="noopener noreferrer">
                         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl font-body font-semibold px-8 h-14 text-base shadow-xl">
                             <x-icons.message-circle class="lucide lucide-message-circle w-5 h-5 mr-2" />Book via WhatsApp
                         </button>

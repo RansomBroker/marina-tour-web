@@ -12,35 +12,43 @@
     </section>
 
     <section class="py-12 bg-background">
+        @php
+            $cuWa = \App\Models\Setting::get('whatsapp_number', '6281234567890');
+            $cuWaClean = preg_replace('/[^0-9]/', '', $cuWa);
+            $cuEmail = \App\Models\Setting::get('company_email', 'info@smithbalitravel.com');
+            $cuAddress = \App\Models\Setting::get('company_address', 'Bali, Indonesia');
+            $cuHours = \App\Models\Setting::get('working_hours', 'Daily 8:00 AM – 9:00 PM (Bali Time)');
+            $cuMap = \App\Models\Setting::get('google_maps_embed', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d505152.90832866866!2d114.94970995!3d-8.4556975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd22f3923364d7d%3A0x54a729bfb59e0430!2sBali%2C%20Indonesia!5e0!3m2!1sen!2s!4v1695000000000!5m2!1sen!2s');
+        @endphp
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 -mt-16 relative z-20">
-                <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="bg-card rounded-2xl p-5 border border-border/50 shadow-lg hover:shadow-xl transition-all text-center group" style="opacity: 1; transform: none;">
+                <a href="https://wa.me/{{ $cuWaClean }}" target="_blank" rel="noopener noreferrer" class="bg-card rounded-2xl p-5 border border-border/50 shadow-lg hover:shadow-xl transition-all text-center group" style="opacity: 1; transform: none;">
                     <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     </div>
                     <p class="text-xs text-muted-foreground font-body mb-1">WhatsApp</p>
-                    <p class="text-sm font-semibold font-body text-foreground">+62 812-3456-7890</p>
+                    <p class="text-sm font-semibold font-body text-foreground">+{{ $cuWaClean }}</p>
                 </a>
-                <a href="mailto:info@smithbalitravel.com" rel="noopener noreferrer" class="bg-card rounded-2xl p-5 border border-border/50 shadow-lg hover:shadow-xl transition-all text-center group" style="opacity: 1; transform: none;">
+                <a href="mailto:{{ $cuEmail }}" rel="noopener noreferrer" class="bg-card rounded-2xl p-5 border border-border/50 shadow-lg hover:shadow-xl transition-all text-center group" style="opacity: 1; transform: none;">
                     <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-5 h-5"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
                     </div>
                     <p class="text-xs text-muted-foreground font-body mb-1">Email</p>
-                    <p class="text-sm font-semibold font-body text-foreground">info@smithbalitravel.com</p>
+                    <p class="text-sm font-semibold font-body text-foreground">{{ $cuEmail }}</p>
                 </a>
                 <a href="#" rel="noopener noreferrer" class="bg-card rounded-2xl p-5 border border-border/50 shadow-lg hover:shadow-xl transition-all text-center group" style="opacity: 1; transform: none;">
                     <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                         <x-icons.map-pin class="lucide lucide-map-pin w-5 h-5" />
                     </div>
                     <p class="text-xs text-muted-foreground font-body mb-1">Address</p>
-                    <p class="text-sm font-semibold font-body text-foreground">Bali, Indonesia</p>
+                    <p class="text-sm font-semibold font-body text-foreground">{{ $cuAddress }}</p>
                 </a>
                 <a href="#" rel="noopener noreferrer" class="bg-card rounded-2xl p-5 border border-border/50 shadow-lg hover:shadow-xl transition-all text-center group" style="opacity: 1; transform: none;">
                     <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock w-5 h-5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                     </div>
                     <p class="text-xs text-muted-foreground font-body mb-1">Hours</p>
-                    <p class="text-sm font-semibold font-body text-foreground">Daily 8:00 AM – 9:00 PM (Bali Time)</p>
+                    <p class="text-sm font-semibold font-body text-foreground">{{ $cuHours }}</p>
                 </a>
             </div>
         </div>
@@ -129,7 +137,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send w-4 h-4 mr-2"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg> 
                                         Send Inquiry
                                     </button>
-                                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://wa.me/{{ $cuWaClean }}" target="_blank" rel="noopener noreferrer">
                                         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground px-4 py-2 rounded-xl font-body font-semibold h-12" type="button">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mr-2 text-primary"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                                             Chat via WhatsApp
@@ -143,7 +151,9 @@
                 <div class="lg:col-span-2">
                     <div class="bg-card rounded-2xl overflow-hidden shadow-sm border border-border/50 h-full min-h-80">
                         <div class="w-full h-full bg-muted flex items-center justify-center">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d505152.90832866866!2d114.94970995!3d-8.4556975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd22f3923364d7d%3A0x54a729bfb59e0430!2sBali%2C%20Indonesia!5e0!3m2!1sen!2s!4v1695000000000!5m2!1sen!2s" width="100%" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Smith Bali Travel Location" style="border: 0px; min-height: 320px;"></iframe>
+                            @if (!empty($cuMap))
+                                <iframe src="{{ $cuMap }}" width="100%" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Smith Bali Travel Location" style="border: 0px; min-height: 320px;"></iframe>
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -36,7 +36,10 @@
                 <h3 class="text-xl font-heading font-bold text-foreground mb-2">Need Help Planning Your Bali Trip?</h3>
                 <p class="text-muted-foreground font-body mb-6">Contact Smith Bali Travel and let our experts create the perfect itinerary for you.</p>
                 <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
+                    @php
+                        $blogWa = preg_replace('/[^0-9]/', '', \App\Models\Setting::get('whatsapp_number', '6281234567890'));
+                    @endphp
+                    <a href="https://wa.me/{{ $blogWa }}" target="_blank" rel="noopener noreferrer">
                         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow h-9 px-4 py-2 bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl font-body font-semibold">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle w-4 h-4 mr-2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg> 
                             Chat on WhatsApp

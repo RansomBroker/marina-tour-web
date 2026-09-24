@@ -67,5 +67,9 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/blogs/edit/{id}', function ($id) {
         return view('admin.blogs-edit', compact('id'));
     })->name('admin.blogs.edit');
+
+    Route::get('/settings', function () {
+        return view('admin.settings');
+    })->name('admin.settings');
 });
 

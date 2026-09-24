@@ -126,7 +126,8 @@ new class extends Component
         }
 
         $waMessage .= "\n\nPlease process my booking. Thank you!";
-        $this->whatsappUrl = "https://wa.me/6281234567890?text=" . urlencode($waMessage);
+        $targetWa = preg_replace('/[^0-9]/', '', \App\Models\Setting::get('whatsapp_number', '6281234567890'));
+        $this->whatsappUrl = "https://wa.me/{$targetWa}?text=" . urlencode($waMessage);
 
         $this->isSuccess = true;
 
