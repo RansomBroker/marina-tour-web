@@ -18,7 +18,7 @@
     @livewireStyles
 </head>
 <body class="antialiased dashboard-pattern text-foreground min-h-screen" 
-	  x-data="{ mobileSidebarOpen: false, sidebarCollapsed: localStorage.getItem('sidebarCollapsed') === 'true' }" 
+	  x-data="{ mobileSidebarOpen: false, sidebarCollapsed: localStorage.getItem('sidebarCollapsed') === 'true', settingsDropdownOpen: {{ request()->routeIs('admin.settings*') ? 'true' : 'false' }} }" 
 	  x-init="$watch('sidebarCollapsed', val => localStorage.setItem('sidebarCollapsed', val))">
 
 	<div class="flex h-screen overflow-hidden">
@@ -27,13 +27,21 @@
 		<aside class="hidden lg:flex flex-col bg-card border-r border-border/60 shrink-0 relative z-20 transition-all duration-300"
 			   :class="sidebarCollapsed ? 'w-20' : 'w-72'">
 			<!-- Sidebar Header -->
+			@php
+				$adminLogo = \App\Models\Setting::get('company_logo');
+				$adminCompanyName = \App\Models\Setting::get('company_name', 'Smith Travel');
+			@endphp
 			<div class="h-20 flex items-center border-b border-border/60 transition-all duration-300"
 				 :class="sidebarCollapsed ? 'justify-center px-4' : 'px-8 gap-3'">
-				<div class="w-9 h-9 rounded-xl bg-accent flex items-center justify-center shadow-lg shadow-accent/20 shrink-0">
-					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
-				</div>
+				@if ($adminLogo)
+					<img src="{{ asset('storage/' . $adminLogo) }}" alt="{{ $adminCompanyName }}" class="h-9 w-9 rounded-xl object-contain shrink-0 bg-white p-0.5">
+				@else
+					<div class="w-9 h-9 rounded-xl bg-accent flex items-center justify-center shadow-lg shadow-accent/20 shrink-0">
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+					</div>
+				@endif
 				<div x-show="!sidebarCollapsed" x-transition:enter="transition ease-out duration-200" class="min-w-0">
-					<span class="font-heading font-bold text-base tracking-wide block leading-none truncate">Smith Travel</span>
+					<span class="font-heading font-bold text-base tracking-wide block leading-none truncate">{{ $adminCompanyName }}</span>
 					<span class="text-[10px] font-body text-accent font-bold tracking-widest uppercase mt-0.5 block">Console</span>
 				</div>
 			</div>
@@ -70,11 +78,51 @@
 					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
 					<span x-show="!sidebarCollapsed" x-transition:enter="transition ease-out duration-200" class="truncate">Blogs</span>
 				</a>
-				<a href="{{ route('admin.settings') }}" class="flex items-center rounded-xl font-body text-sm transition-all {{ request()->routeIs('admin.settings') ? 'bg-primary text-white font-semibold shadow-md shadow-primary/15' : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground font-medium' }}"
-				   :class="sidebarCollapsed ? 'p-3 justify-center' : 'px-4 py-3 gap-3'">
-					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-					<span x-show="!sidebarCollapsed" x-transition:enter="transition ease-out duration-200" class="truncate">Website Settings</span>
-				</a>
+				<!-- Settings Accordion / Dropdown -->
+				<div class="space-y-1">
+					<button 
+						type="button"
+						x-on:click="if (sidebarCollapsed) { sidebarCollapsed = false; } settingsDropdownOpen = !settingsDropdownOpen"
+						class="w-full flex items-center justify-between rounded-xl font-body text-sm transition-all {{ request()->routeIs('admin.settings*') ? 'bg-primary/10 text-primary font-semibold' : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground font-medium' }}"
+						:class="sidebarCollapsed ? 'p-3 justify-center' : 'px-4 py-3 gap-3'"
+						title="Settings"
+					>
+						<div class="flex items-center gap-3 min-w-0">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+							<span x-show="!sidebarCollapsed" x-transition:enter="transition ease-out duration-200" class="truncate">Settings</span>
+						</div>
+						<svg x-show="!sidebarCollapsed" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 transition-transform duration-200" :class="settingsDropdownOpen ? 'rotate-180 text-primary' : 'text-muted-foreground'"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+
+					<!-- Submenu Items -->
+					<div 
+						x-show="settingsDropdownOpen && !sidebarCollapsed" 
+						x-transition:enter="transition ease-out duration-200"
+						x-transition:enter-start="opacity-0 -translate-y-2"
+						x-transition:enter-end="opacity-100 translate-y-0"
+						x-transition:leave="transition ease-in duration-150"
+						x-transition:leave-start="opacity-100 translate-y-0"
+						x-transition:leave-end="opacity-0 -translate-y-2"
+						class="pl-7 pr-2 py-1 space-y-1"
+					>
+						<a href="{{ route('admin.settings.whatsapp') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body text-xs transition-all {{ request()->routeIs('admin.settings.whatsapp') ? 'bg-primary text-white font-semibold shadow-sm' : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground font-medium' }}">
+							<span class="w-1.5 h-1.5 rounded-full {{ request()->routeIs('admin.settings.whatsapp') ? 'bg-white' : 'bg-muted-foreground/60' }}"></span>
+							<span>WhatsApp Setting</span>
+						</a>
+						<a href="{{ route('admin.settings.company') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body text-xs transition-all {{ request()->routeIs('admin.settings.company') ? 'bg-primary text-white font-semibold shadow-sm' : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground font-medium' }}">
+							<span class="w-1.5 h-1.5 rounded-full {{ request()->routeIs('admin.settings.company') ? 'bg-white' : 'bg-muted-foreground/60' }}"></span>
+							<span>Company Profile & Logo</span>
+						</a>
+						<a href="{{ route('admin.settings.smtp') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body text-xs transition-all {{ request()->routeIs('admin.settings.smtp') ? 'bg-primary text-white font-semibold shadow-sm' : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground font-medium' }}">
+							<span class="w-1.5 h-1.5 rounded-full {{ request()->routeIs('admin.settings.smtp') ? 'bg-white' : 'bg-muted-foreground/60' }}"></span>
+							<span>SMTP (Email) Setting</span>
+						</a>
+						<a href="{{ route('admin.settings.users') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body text-xs transition-all {{ request()->routeIs('admin.settings.users') ? 'bg-primary text-white font-semibold shadow-sm' : 'text-muted-foreground hover:bg-muted/40 hover:text-foreground font-medium' }}">
+							<span class="w-1.5 h-1.5 rounded-full {{ request()->routeIs('admin.settings.users') ? 'bg-white' : 'bg-muted-foreground/60' }}"></span>
+							<span>User Management</span>
+						</a>
+					</div>
+				</div>
 			</nav>
 
 			<!-- Sidebar Footer -->
@@ -133,9 +181,15 @@
 			<!-- Mobile Sidebar Header -->
 			<div class="h-20 flex items-center justify-between px-6 border-b border-border/60">
 				<div class="flex items-center gap-3">
-					<div class="w-9 h-9 rounded-xl bg-accent flex items-center justify-center text-white font-bold">S</div>
+					@if ($adminLogo)
+						<img src="{{ asset('storage/' . $adminLogo) }}" alt="{{ $adminCompanyName }}" class="h-9 w-9 rounded-xl object-contain bg-white p-0.5">
+					@else
+						<div class="w-9 h-9 rounded-xl bg-accent flex items-center justify-center text-white font-bold">
+							{{ strtoupper(substr($adminCompanyName, 0, 1)) ?: 'S' }}
+						</div>
+					@endif
 					<div>
-						<span class="font-heading font-bold text-base leading-none block">Smith Travel</span>
+						<span class="font-heading font-bold text-base leading-none block">{{ $adminCompanyName }}</span>
 						<span class="text-[10px] font-body text-accent font-semibold tracking-wider uppercase block">Console</span>
 					</div>
 				</div>
@@ -170,10 +224,39 @@
 					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
 					Blogs
 				</a>
-				<a href="{{ route('admin.settings') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl font-body text-sm {{ request()->routeIs('admin.settings') ? 'bg-primary text-white font-semibold shadow-md' : 'text-muted-foreground font-medium hover:bg-muted/40 hover:text-foreground transition-all' }}">
-					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-					Website Settings
-				</a>
+				<!-- Mobile Settings Accordion -->
+				<div class="space-y-1">
+					<button 
+						type="button"
+						x-on:click="settingsDropdownOpen = !settingsDropdownOpen"
+						class="w-full flex items-center justify-between px-4 py-3 rounded-xl font-body text-sm {{ request()->routeIs('admin.settings*') ? 'bg-primary/10 text-primary font-semibold' : 'text-muted-foreground font-medium hover:bg-muted/40' }}"
+					>
+						<div class="flex items-center gap-3">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+							<span>Settings</span>
+						</div>
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200" :class="settingsDropdownOpen ? 'rotate-180 text-primary' : 'text-muted-foreground'"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+
+					<div x-show="settingsDropdownOpen" class="pl-7 pr-2 py-1 space-y-1">
+						<a href="{{ route('admin.settings.whatsapp') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body text-xs {{ request()->routeIs('admin.settings.whatsapp') ? 'bg-primary text-white font-semibold' : 'text-muted-foreground hover:bg-muted/40 font-medium' }}">
+							<span class="w-1.5 h-1.5 rounded-full {{ request()->routeIs('admin.settings.whatsapp') ? 'bg-white' : 'bg-muted-foreground/60' }}"></span>
+							<span>WhatsApp Setting</span>
+						</a>
+						<a href="{{ route('admin.settings.company') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body text-xs {{ request()->routeIs('admin.settings.company') ? 'bg-primary text-white font-semibold' : 'text-muted-foreground hover:bg-muted/40 font-medium' }}">
+							<span class="w-1.5 h-1.5 rounded-full {{ request()->routeIs('admin.settings.company') ? 'bg-white' : 'bg-muted-foreground/60' }}"></span>
+							<span>Company Profile & Logo</span>
+						</a>
+						<a href="{{ route('admin.settings.smtp') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body text-xs {{ request()->routeIs('admin.settings.smtp') ? 'bg-primary text-white font-semibold' : 'text-muted-foreground hover:bg-muted/40 font-medium' }}">
+							<span class="w-1.5 h-1.5 rounded-full {{ request()->routeIs('admin.settings.smtp') ? 'bg-white' : 'bg-muted-foreground/60' }}"></span>
+							<span>SMTP (Email) Setting</span>
+						</a>
+						<a href="{{ route('admin.settings.users') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-body text-xs {{ request()->routeIs('admin.settings.users') ? 'bg-primary text-white font-semibold' : 'text-muted-foreground hover:bg-muted/40 font-medium' }}">
+							<span class="w-1.5 h-1.5 rounded-full {{ request()->routeIs('admin.settings.users') ? 'bg-white' : 'bg-muted-foreground/60' }}"></span>
+							<span>User Management</span>
+						</a>
+					</div>
+				</div>
 
 			<!-- Mobile Sidebar Footer -->
 			<div class="p-4 border-t border-border/60">

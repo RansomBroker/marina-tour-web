@@ -1,12 +1,23 @@
 <footer class="bg-foreground text-background">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        @php
+            $footerLogo = \App\Models\Setting::get('company_logo');
+            $footerCompanyName = \App\Models\Setting::get('company_name', 'Smith Bali Travel');
+            $footerAbout = \App\Models\Setting::get('company_about', 'Your trusted Bali travel partner. Curated tours and personalized experiences across the Island of the Gods.');
+        @endphp
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             <div>
-                <div class="flex items-center gap-2 mb-4">
-                    <div class="w-9 h-9 rounded-xl bg-accent flex items-center justify-center font-heading font-bold text-lg text-white">S</div>
-                    <span class="font-heading font-bold text-lg">Smith Bali Travel</span>
-                </div>
-                <p class="text-sm opacity-70 leading-relaxed mb-6">Your trusted Bali travel partner. Curated tours and personalized experiences across the Island of the Gods.</p>
+                <a href="/" class="flex items-center gap-3 mb-4 group">
+                    @if ($footerLogo)
+                        <img src="{{ asset('storage/' . $footerLogo) }}" alt="{{ $footerCompanyName }}" class="h-10 w-auto max-w-[160px] object-contain">
+                    @else
+                        <div class="w-9 h-9 rounded-xl bg-accent flex items-center justify-center font-heading font-bold text-lg text-white">
+                            {{ strtoupper(substr($footerCompanyName, 0, 1)) ?: 'S' }}
+                        </div>
+                    @endif
+                    <span class="font-heading font-bold text-lg group-hover:text-accent transition-colors">{{ $footerCompanyName }}</span>
+                </a>
+                <p class="text-sm opacity-70 leading-relaxed mb-6">{{ $footerAbout }}</p>
                 <div class="flex gap-3">
                     <a href="#" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-accent hover:text-white flex items-center justify-center transition-all">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram w-4 h-4"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
@@ -65,7 +76,7 @@
     </div>
     <div class="border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-xs opacity-50">© 2026 Smith Bali Travel. All rights reserved.</p>
+            <p class="text-xs opacity-50">© {{ date('Y') }} {{ $footerCompanyName }}. All rights reserved.</p>
             <div class="flex gap-6">
                 <a href="#" class="text-xs opacity-50 hover:opacity-100 transition-opacity">Privacy Policy</a>
                 <a href="#" class="text-xs opacity-50 hover:opacity-100 transition-opacity">Terms of Service</a>

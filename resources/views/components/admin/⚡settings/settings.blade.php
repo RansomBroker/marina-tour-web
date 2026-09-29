@@ -2,21 +2,12 @@
     <!-- Header Page Title -->
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-            <h1 class="text-2xl sm:text-3xl font-heading font-bold text-foreground">Website Settings</h1>
-            <p class="text-sm text-muted-foreground font-body mt-1">Configure your business WhatsApp number, admin notification email, and company details.</p>
+            <h1 class="text-2xl sm:text-3xl font-heading font-bold text-foreground">General Website Settings</h1>
+            <p class="text-sm text-muted-foreground font-body mt-1">Configure your business WhatsApp number, company info, office address, and contact details.</p>
         </div>
     </div>
 
-    <!-- Alert / Flash Message -->
-    @if (session('success'))
-        <div class="p-4 bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 rounded-2xl flex items-center gap-3 font-body text-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>{{ session('success') }}</span>
-        </div>
-    @endif
-
     <form wire:submit.prevent="save" class="space-y-6">
-        
         <!-- SECTION 1: WhatsApp Configuration (Top Priority) -->
         <div class="bg-card border border-border/60 shadow-sm rounded-3xl p-6 sm:p-8 space-y-6 relative overflow-hidden">
             <div class="flex items-start gap-4">
@@ -27,7 +18,7 @@
                 </div>
                 <div>
                     <h2 class="text-xl font-heading font-bold text-foreground">WhatsApp Configuration</h2>
-                    <p class="text-xs text-muted-foreground font-body mt-0.5">Semua pengalihan pesanan (*booking redirect*), tombol chat mengapung, dan tombol WhatsApp di seluruh website akan mengarah ke nomor ini.</p>
+                    <p class="text-xs text-muted-foreground font-body mt-0.5">Semua pengalihan pesanan (*booking redirect*), floating chat WA, dan tombol WhatsApp di seluruh website akan mengarah ke nomor ini.</p>
                 </div>
             </div>
 
@@ -37,16 +28,14 @@
                         <span>Nomor WhatsApp Bisnis *</span>
                         <span class="text-xs font-normal text-muted-foreground">Format: 628... (tanpa tanda +)</span>
                     </label>
-                    <div class="relative">
-                        <input 
-                            type="text" 
-                            id="whatsapp_number" 
-                            wire:model="whatsapp_number" 
-                            class="flex w-full border border-input bg-background px-4 py-2.5 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-xl font-body h-12"
-                            placeholder="Contoh: 6281234567890"
-                            required
-                        >
-                    </div>
+                    <input 
+                        type="text" 
+                        id="whatsapp_number" 
+                        wire:model="whatsapp_number" 
+                        class="flex w-full border border-input bg-background px-4 py-2.5 text-sm shadow-sm transition-colors rounded-xl font-body h-12"
+                        placeholder="Contoh: 6281234567890"
+                        required
+                    >
                     @error('whatsapp_number') <span class="text-xs text-red-500 font-body">{{ $message }}</span> @enderror
                     <p class="text-xs text-muted-foreground font-body">
                         Sistem akan otomatis menghapus spasi atau tanda hubung. Gunakan kode negara (misal <strong>62</strong> untuk Indonesia).
@@ -69,57 +58,7 @@
             </div>
         </div>
 
-        <!-- SECTION 2: Notification & Admin Email -->
-        <div class="bg-card border border-border/60 shadow-sm rounded-3xl p-6 sm:p-8 space-y-6">
-            <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0 shadow-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                </div>
-                <div>
-                    <h2 class="text-xl font-heading font-bold text-foreground">Notification Email Settings</h2>
-                    <p class="text-xs text-muted-foreground font-body mt-0.5">Email tujuan untuk menerima notifikasi pesanan dan formulir pertanyaan (inquiry).</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-                <div class="space-y-2">
-                    <label for="admin_email" class="text-sm font-semibold font-body text-foreground">
-                        Email Penerima Notifikasi Admin *
-                    </label>
-                    <input 
-                        type="email" 
-                        id="admin_email" 
-                        wire:model="admin_email" 
-                        class="flex w-full border border-input bg-background px-4 py-2.5 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-xl font-body h-12"
-                        placeholder="Contoh: Kadekekahospitality@gmail.com"
-                        required
-                    >
-                    @error('admin_email') <span class="text-xs text-red-500 font-body">{{ $message }}</span> @enderror
-                    <p class="text-xs text-muted-foreground font-body">
-                        Sesuai spesifikasi: <code>Kadekekahospitality@gmail.com</code>.
-                    </p>
-                </div>
-
-                <div class="space-y-2">
-                    <label for="company_email" class="text-sm font-semibold font-body text-foreground">
-                        Email Publik / Info Website
-                    </label>
-                    <input 
-                        type="email" 
-                        id="company_email" 
-                        wire:model="company_email" 
-                        class="flex w-full border border-input bg-background px-4 py-2.5 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-xl font-body h-12"
-                        placeholder="Contoh: info@smithbalitravel.com"
-                    >
-                    @error('company_email') <span class="text-xs text-red-500 font-body">{{ $message }}</span> @enderror
-                    <p class="text-xs text-muted-foreground font-body">
-                        Email yang ditampilkan pada halaman kontak publik & footer website.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECTION 3: General Company Information -->
+        <!-- SECTION 2: General Company Information -->
         <div class="bg-card border border-border/60 shadow-sm rounded-3xl p-6 sm:p-8 space-y-6">
             <div class="flex items-start gap-4">
                 <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent shrink-0 shadow-sm">
@@ -127,82 +66,82 @@
                 </div>
                 <div>
                     <h2 class="text-xl font-heading font-bold text-foreground">Company & Office Details</h2>
-                    <p class="text-xs text-muted-foreground font-body mt-0.5">Informasi umum yang ditampilkan pada footer dan halaman kontak.</p>
+                    <p class="text-xs text-muted-foreground font-body mt-0.5">Informasi profil yang ditampilkan pada footer dan halaman kontak.</p>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                 <div class="space-y-2">
-                    <label for="company_name" class="text-sm font-semibold font-body text-foreground">
-                        Nama Usaha / Brand *
-                    </label>
+                    <label for="company_name" class="text-sm font-semibold font-body text-foreground">Nama Usaha / Brand *</label>
                     <input 
                         type="text" 
                         id="company_name" 
                         wire:model="company_name" 
-                        class="flex w-full border border-input bg-background px-4 py-2.5 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-xl font-body h-12"
-                        placeholder="Smith Bali Travel"
+                        class="flex w-full border border-input bg-background px-4 py-2.5 text-sm shadow-sm transition-colors rounded-xl font-body h-12"
+                        placeholder="Smith Travel Bali"
                         required
                     >
                     @error('company_name') <span class="text-xs text-red-500 font-body">{{ $message }}</span> @enderror
                 </div>
 
                 <div class="space-y-2">
-                    <label for="working_hours" class="text-sm font-semibold font-body text-foreground">
-                        Jam Operasional Layanan
-                    </label>
+                    <label for="company_email" class="text-sm font-semibold font-body text-foreground">Email Kontak Publik</label>
+                    <input 
+                        type="email" 
+                        id="company_email" 
+                        wire:model="company_email" 
+                        class="flex w-full border border-input bg-background px-4 py-2.5 text-sm shadow-sm transition-colors rounded-xl font-body h-12"
+                        placeholder="info@smithtravelbali.com"
+                    >
+                    @error('company_email') <span class="text-xs text-red-500 font-body">{{ $message }}</span> @enderror
+                </div>
+
+                <div class="space-y-2">
+                    <label for="working_hours" class="text-sm font-semibold font-body text-foreground">Jam Operasional Layanan</label>
                     <input 
                         type="text" 
                         id="working_hours" 
                         wire:model="working_hours" 
-                        class="flex w-full border border-input bg-background px-4 py-2.5 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-xl font-body h-12"
+                        class="flex w-full border border-input bg-background px-4 py-2.5 text-sm shadow-sm transition-colors rounded-xl font-body h-12"
                         placeholder="Daily 8:00 AM – 9:00 PM (Bali Time)"
                     >
-                    @error('working_hours') <span class="text-xs text-red-500 font-body">{{ $message }}</span> @enderror
                 </div>
 
-                <div class="col-span-1 md:col-span-2 space-y-2">
-                    <label for="company_address" class="text-sm font-semibold font-body text-foreground">
-                        Alamat Kantor
-                    </label>
+                <div class="space-y-2">
+                    <label for="company_address" class="text-sm font-semibold font-body text-foreground">Alamat Kantor</label>
                     <input 
                         type="text" 
                         id="company_address" 
                         wire:model="company_address" 
-                        class="flex w-full border border-input bg-background px-4 py-2.5 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-xl font-body h-12"
-                        placeholder="Bali, Indonesia"
+                        class="flex w-full border border-input bg-background px-4 py-2.5 text-sm shadow-sm transition-colors rounded-xl font-body h-12"
+                        placeholder="Ubud, Gianyar, Bali - Indonesia"
                     >
-                    @error('company_address') <span class="text-xs text-red-500 font-body">{{ $message }}</span> @enderror
                 </div>
 
-                <div class="col-span-1 md:col-span-2 space-y-2">
-                    <label for="google_maps_embed" class="text-sm font-semibold font-body text-foreground">
-                        Google Maps Embed URL (Iframe src)
-                    </label>
-                    <input 
-                        type="text" 
+                <div class="space-y-2 md:col-span-2">
+                    <label for="google_maps_embed" class="text-sm font-semibold font-body text-foreground">Google Maps Embed URL (Opsional)</label>
+                    <textarea 
                         id="google_maps_embed" 
                         wire:model="google_maps_embed" 
-                        class="flex w-full border border-input bg-background px-4 py-2.5 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-xl font-body h-12"
+                        rows="2"
+                        class="flex w-full border border-input bg-background p-3 text-sm shadow-sm transition-colors rounded-xl font-body"
                         placeholder="https://www.google.com/maps/embed?..."
-                    >
-                    @error('google_maps_embed') <span class="text-xs text-red-500 font-body">{{ $message }}</span> @enderror
+                    ></textarea>
                 </div>
             </div>
         </div>
 
-        <!-- Form Actions -->
-        <div class="flex items-center justify-end gap-4 pt-4">
+        <!-- Save Button -->
+        <div class="flex justify-end pt-2">
             <button 
                 type="submit" 
-                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg px-8 h-12 rounded-xl font-body font-bold"
                 wire:loading.attr="disabled"
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors bg-primary text-primary-foreground hover:bg-primary/90 h-12 px-8 rounded-2xl font-body text-sm font-semibold shadow-md shadow-primary/20"
             >
-                <svg wire:loading.remove xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
-                <svg wire:loading class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                <span>Save Settings</span>
+                <svg wire:loading.remove wire:target="save" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                <span wire:loading wire:target="save" class="animate-spin inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full"></span>
+                Save General Settings
             </button>
         </div>
-
     </form>
 </div>

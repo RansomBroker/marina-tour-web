@@ -119,7 +119,7 @@
 								</div>
 							</td>
 							<td class="py-4 px-6">
-								<span class="font-medium text-foreground">{{ $booking->package->title ?? 'N/A' }}</span>
+								<span class="font-medium text-foreground">{{ $booking->package->name ?? 'N/A' }}</span>
 							</td>
 							<td class="py-4 px-6 text-muted-foreground">
 								{{ $booking->created_at->format('M d, Y') }}
@@ -128,19 +128,34 @@
 								Rp {{ number_format($booking->total_price, 0, ',', '.') }}
 							</td>
 							<td class="py-4 px-6">
-								@if($booking->status === 'confirmed')
-									<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600">
+								@if($booking->status === 'new')
+									<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-500">
+										<span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+										New
+									</span>
+								@elseif($booking->status === 'follow_up')
+									<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-500">
+										<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+										Follow Up
+									</span>
+								@elseif($booking->status === 'confirmed')
+									<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-500">
 										<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
 										Confirmed
 									</span>
-								@elseif($booking->status === 'pending')
-									<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600">
-										<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-										Pending
+								@elseif($booking->status === 'assigned')
+									<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-500">
+										<span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+										Assigned
+									</span>
+								@elseif($booking->status === 'completed')
+									<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-teal-500/10 text-teal-500">
+										<span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+										Completed
 									</span>
 								@else
-									<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-red-500/10 text-red-600">
-										<span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+									<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-rose-500/10 text-rose-500">
+										<span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
 										Cancelled
 									</span>
 								@endif

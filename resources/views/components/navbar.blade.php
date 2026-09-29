@@ -2,12 +2,22 @@
     <div class="max-w-[1400px] mx-auto flex items-center justify-between">
 
         {{-- Logo --}}
+        @php
+            $siteLogo = \App\Models\Setting::get('company_logo');
+            $companyName = \App\Models\Setting::get('company_name', 'Smith Bali Travel');
+        @endphp
         <a href="/" class="flex items-center gap-3 group">
-            <div class="w-10 h-10 rounded-lg bg-white/20 group-[.scrolled]/nav:bg-gray-100 backdrop-blur-sm flex items-center justify-center transition-colors duration-300">
-                <span class="text-white group-[.scrolled]/nav:text-gray-800 font-bold text-lg transition-colors duration-300" style="font-family: var(--font-display)">S</span>
-            </div>
+            @if ($siteLogo)
+                <img src="{{ asset('storage/' . $siteLogo) }}" alt="{{ $companyName }}" class="h-10 w-auto max-w-[160px] object-contain">
+            @else
+                <div class="w-10 h-10 rounded-lg bg-white/20 group-[.scrolled]/nav:bg-gray-100 backdrop-blur-sm flex items-center justify-center transition-colors duration-300">
+                    <span class="text-white group-[.scrolled]/nav:text-gray-800 font-bold text-lg transition-colors duration-300" style="font-family: var(--font-display)">
+                        {{ strtoupper(substr($companyName, 0, 1)) ?: 'S' }}
+                    </span>
+                </div>
+            @endif
             <span class="text-white group-[.scrolled]/nav:text-gray-800 text-xl font-medium tracking-wide transition-colors duration-300">
-                Smith Bali Travel
+                {{ $companyName }}
             </span>
         </a>
 

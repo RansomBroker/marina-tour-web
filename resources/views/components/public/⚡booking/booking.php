@@ -5,6 +5,10 @@ use Livewire\Attributes\On;
 use App\Models\TourPackage;
 use App\Models\Booking;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
+use App\Mail\NewBookingAdminNotification;
+use App\Mail\BookingCustomerConfirmation;
 
 new class extends Component
 {
@@ -100,12 +104,28 @@ new class extends Component
             'pickup_location' => $this->pickup_location,
             'special_request' => $this->special_request,
             'total_price' => $this->totalPrice,
-            'status' => 'pending',
+            'deposit_amount' => 0,
+            'remaining_balance' => $this->totalPrice,
+            'payment_status' => 'unpaid',
+            'status' => 'new',
         ]);
+
+        // Send Email Notification to Admin & Confirmation to Customer
+        try {
+            $adminEmail = \App\Models\Setting::get('admin_email', env('ADMIN_EMAIL', 'Kadekekahospitality@gmail.com'));
+            
+            // 1. Send notification to Admin
+            Mail::to($adminEmail)->send(new NewBookingAdminNotification($booking));
+
+            // 2. Send confirmation to Customer
+            Mail::to($booking->email)->send(new BookingCustomerConfirmation($booking));
+        } catch (\Exception $e) {
+            Log::error("Failed to send booking emails: " . $e->getMessage());
+        }
 
         // Send a toast notification
         $this->dispatch('toast', 
-            message: 'Booking request submitted successfully!', 
+            message: 'Booking request submitted successfully! Confirmation email has been sent.', 
             type: 'success'
         );
 

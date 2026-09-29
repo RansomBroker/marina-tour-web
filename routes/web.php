@@ -69,7 +69,23 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     })->name('admin.blogs.edit');
 
     Route::get('/settings', function () {
-        return view('admin.settings');
+        return redirect()->route('admin.settings.whatsapp');
     })->name('admin.settings');
+
+    Route::get('/settings/whatsapp', function () {
+        return view('admin.whatsapp-settings');
+    })->name('admin.settings.whatsapp');
+
+    Route::get('/settings/company', function () {
+        return view('admin.company-settings');
+    })->name('admin.settings.company');
+
+    Route::get('/settings/smtp', function () {
+        return view('admin.smtp-settings');
+    })->name('admin.settings.smtp');
+
+    Route::get('/settings/users', function () {
+        return view('admin.user-management');
+    })->name('admin.settings.users');
 });
 

@@ -11,8 +11,8 @@ new class extends Component
     {
         $totalBookings = Booking::count();
         
-        // Sum total price of confirmed bookings
-        $totalRevenue = Booking::where('status', 'confirmed')->sum('total_price');
+        // Sum total price of confirmed, assigned, and completed bookings
+        $totalRevenue = Booking::whereIn('status', ['confirmed', 'assigned', 'completed'])->sum('total_price');
         
         $totalPackages = TourPackage::count();
         $totalInquiries = Inquiry::count();
