@@ -1,0 +1,76 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: marina-tour-app:8.3
+    container_name: lemp-app-marina-tour
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+      - /var/www/node_modules
+    networks:
+      - lemp-marina-tour
+
+  webserver:
+    image: nginx:alpine
+    container_name: lemp-nginx-marina-tour
+    restart: unless-stopped
+    ports:
+      - "8089:80"
+    volumes:
+      - .:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - lemp-marina-tour
+
+  db:
+    image: mysql:8.0
+    container_name: lemp-mysql-marina-tour
+    restart: unless-stopped
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_DATABASE: marina_tour_db
+      MYSQL_ROOT_PASSWORD: marina_tour_password
+      MYSQL_PASSWORD: marina_tour_password
+      MYSQL_USER: marina_tour_user
+    volumes:
+      - dbdata-marina-tour:/var/lib/mysql
+    networks:
+      - lemp-marina-tour
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: lemp-phpmyadmin-marina-tour
+    restart: unless-stopped
+    ports:
+      - "8082:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+      MYSQL_ROOT_PASSWORD: marina_tour_password
+    depends_on:
+      - db
+    networks:
+      - lemp-marina-tour
+
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: lemp-mailpit-marina-tour
+    restart: unless-stopped
+    ports:
+      - "1027:1025"
+      - "8027:8025"
+    networks:
+      - lemp-marina-tour
+
+networks:
+  lemp-marina-tour:
+    driver: bridge
+
+volumes:
+  dbdata-marina-tour:
+    driver: local

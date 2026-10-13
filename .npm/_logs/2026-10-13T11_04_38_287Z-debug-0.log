@@ -1,0 +1,1035 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.20.2
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/var/www/.npmrc
+5 silly config load:file:/usr/etc/npmrc
+6 verbose title npm install
+7 verbose argv "install"
+8 verbose logfile logs-max:10 dir:/var/www/.npm/_logs/2026-10-13T11_04_38_287Z-
+9 verbose logfile /var/www/.npm/_logs/2026-10-13T11_04_38_287Z-debug-0.log
+10 silly packumentCache heap:1056964608 maxSize:264241152 maxEntrySize:132120576
+11 silly logfile done cleaning log files
+12 silly idealTree buildDeps
+13 silly reify moves {}
+14 verbose reify failed optional dependency /var/www/node_modules/@tailwindcss/oxide-wasm32-wasi
+15 silly reify mark deleted [ '/var/www/node_modules/@tailwindcss/oxide-wasm32-wasi' ]
+16 silly audit bulk request {
+16 silly audit   '@esbuild/aix-ppc64': [ '0.25.12' ],
+16 silly audit   '@esbuild/android-arm': [ '0.25.12' ],
+16 silly audit   '@esbuild/android-arm64': [ '0.25.12' ],
+16 silly audit   '@esbuild/android-x64': [ '0.25.12' ],
+16 silly audit   '@esbuild/darwin-arm64': [ '0.25.12' ],
+16 silly audit   '@esbuild/darwin-x64': [ '0.25.12' ],
+16 silly audit   '@esbuild/freebsd-arm64': [ '0.25.12' ],
+16 silly audit   '@esbuild/freebsd-x64': [ '0.25.12' ],
+16 silly audit   '@esbuild/linux-arm': [ '0.25.12' ],
+16 silly audit   '@esbuild/linux-arm64': [ '0.25.12' ],
+16 silly audit   '@esbuild/linux-ia32': [ '0.25.12' ],
+16 silly audit   '@esbuild/linux-loong64': [ '0.25.12' ],
+16 silly audit   '@esbuild/linux-mips64el': [ '0.25.12' ],
+16 silly audit   '@esbuild/linux-ppc64': [ '0.25.12' ],
+16 silly audit   '@esbuild/linux-riscv64': [ '0.25.12' ],
+16 silly audit   '@esbuild/linux-s390x': [ '0.25.12' ],
+16 silly audit   '@esbuild/linux-x64': [ '0.25.12' ],
+16 silly audit   '@esbuild/netbsd-arm64': [ '0.25.12' ],
+16 silly audit   '@esbuild/netbsd-x64': [ '0.25.12' ],
+16 silly audit   '@esbuild/openbsd-arm64': [ '0.25.12' ],
+16 silly audit   '@esbuild/openbsd-x64': [ '0.25.12' ],
+16 silly audit   '@esbuild/openharmony-arm64': [ '0.25.12' ],
+16 silly audit   '@esbuild/sunos-x64': [ '0.25.12' ],
+16 silly audit   '@esbuild/win32-arm64': [ '0.25.12' ],
+16 silly audit   '@esbuild/win32-ia32': [ '0.25.12' ],
+16 silly audit   '@esbuild/win32-x64': [ '0.25.12' ],
+16 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+16 silly audit   '@jridgewell/remapping': [ '2.3.5' ],
+16 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+16 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+16 silly audit   '@jridgewell/trace-mapping': [ '0.3.31' ],
+16 silly audit   '@rollup/rollup-android-arm-eabi': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-android-arm64': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-darwin-arm64': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-darwin-x64': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-freebsd-arm64': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-freebsd-x64': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-linux-arm-gnueabihf': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-linux-arm-musleabihf': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-linux-arm64-gnu': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-linux-arm64-musl': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-linux-loong64-gnu': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-linux-loong64-musl': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-linux-ppc64-gnu': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-linux-ppc64-musl': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-linux-riscv64-gnu': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-linux-riscv64-musl': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-linux-s390x-gnu': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-linux-x64-gnu': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-linux-x64-musl': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-openbsd-x64': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-openharmony-arm64': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-win32-arm64-msvc': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-win32-ia32-msvc': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-win32-x64-gnu': [ '4.60.2' ],
+16 silly audit   '@rollup/rollup-win32-x64-msvc': [ '4.60.2' ],
+16 silly audit   '@tailwindcss/node': [ '4.2.4' ],
+16 silly audit   '@tailwindcss/oxide': [ '4.2.4' ],
+16 silly audit   '@tailwindcss/oxide-android-arm64': [ '4.2.4' ],
+16 silly audit   '@tailwindcss/oxide-darwin-arm64': [ '4.2.4' ],
+16 silly audit   '@tailwindcss/oxide-darwin-x64': [ '4.2.4' ],
+16 silly audit   '@tailwindcss/oxide-freebsd-x64': [ '4.2.4' ],
+16 silly audit   '@tailwindcss/oxide-linux-arm-gnueabihf': [ '4.2.4' ],
+16 silly audit   '@tailwindcss/oxide-linux-arm64-gnu': [ '4.2.4' ],
+16 silly audit   '@tailwindcss/oxide-linux-arm64-musl': [ '4.2.4' ],
+16 silly audit   '@tailwindcss/oxide-linux-x64-gnu': [ '4.2.4' ],
+16 silly audit   '@tailwindcss/oxide-linux-x64-musl': [ '4.2.4' ],
+16 silly audit   '@tailwindcss/oxide-win32-arm64-msvc': [ '4.2.4' ],
+16 silly audit   '@tailwindcss/oxide-win32-x64-msvc': [ '4.2.4' ],
+16 silly audit   '@tailwindcss/vite': [ '4.2.4' ],
+16 silly audit   '@types/estree': [ '1.0.8' ],
+16 silly audit   'ansi-regex': [ '5.0.1' ],
+16 silly audit   'ansi-styles': [ '4.3.0' ],
+16 silly audit   asynckit: [ '0.4.0' ],
+16 silly audit   axios: [ '1.15.2' ],
+16 silly audit   'call-bind-apply-helpers': [ '1.0.2' ],
+16 silly audit   chalk: [ '4.1.2' ],
+16 silly audit   'supports-color': [ '7.2.0', '8.1.1' ],
+16 silly audit   cliui: [ '8.0.1' ],
+16 silly audit   'color-convert': [ '2.0.1' ],
+16 silly audit   'color-name': [ '1.1.4' ],
+16 silly audit   'combined-stream': [ '1.0.8' ],
+16 silly audit   concurrently: [ '9.2.1' ],
+16 silly audit   'delayed-stream': [ '1.0.0' ],
+16 silly audit   'detect-libc': [ '2.1.2' ],
+16 silly audit   'dunder-proto': [ '1.0.1' ],
+16 silly audit   'emoji-regex': [ '8.0.0' ],
+16 silly audit   'enhanced-resolve': [ '5.21.0' ],
+16 silly audit   'es-define-property': [ '1.0.1' ],
+16 silly audit   'es-errors': [ '1.3.0' ],
+16 silly audit   'es-object-atoms': [ '1.1.1' ],
+16 silly audit   'es-set-tostringtag': [ '2.1.0' ],
+16 silly audit   esbuild: [ '0.25.12' ],
+16 silly audit   escalade: [ '3.2.0' ],
+16 silly audit   fdir: [ '6.5.0' ],
+16 silly audit   'follow-redirects': [ '1.16.0' ],
+16 silly audit   'form-data': [ '4.0.5' ],
+16 silly audit   fsevents: [ '2.3.3' ],
+16 silly audit   'function-bind': [ '1.1.2' ],
+16 silly audit   'get-caller-file': [ '2.0.5' ],
+16 silly audit   'get-intrinsic': [ '1.3.0' ],
+16 silly audit   'get-proto': [ '1.0.1' ],
+16 silly audit   gopd: [ '1.2.0' ],
+16 silly audit   'graceful-fs': [ '4.2.11' ],
+16 silly audit   'has-flag': [ '4.0.0' ],
+16 silly audit   'has-symbols': [ '1.1.0' ],
+16 silly audit   'has-tostringtag': [ '1.0.2' ],
+16 silly audit   hasown: [ '2.0.3' ],
+16 silly audit   'is-fullwidth-code-point': [ '3.0.0' ],
+16 silly audit   jiti: [ '2.6.1' ],
+16 silly audit   'laravel-vite-plugin': [ '1.3.0' ],
+16 silly audit   lightningcss: [ '1.32.0' ],
+16 silly audit   'lightningcss-android-arm64': [ '1.32.0' ],
+16 silly audit   'lightningcss-darwin-arm64': [ '1.32.0' ],
+16 silly audit   'lightningcss-darwin-x64': [ '1.32.0' ],
+16 silly audit   'lightningcss-freebsd-x64': [ '1.32.0' ],
+16 silly audit   'lightningcss-linux-arm-gnueabihf': [ '1.32.0' ],
+16 silly audit   'lightningcss-linux-arm64-gnu': [ '1.32.0' ],
+16 silly audit   'lightningcss-linux-arm64-musl': [ '1.32.0' ],
+16 silly audit   'lightningcss-linux-x64-gnu': [ '1.32.0' ],
+16 silly audit   'lightningcss-linux-x64-musl': [ '1.32.0' ],
+16 silly audit   'lightningcss-win32-arm64-msvc': [ '1.32.0' ],
+16 silly audit   'lightningcss-win32-x64-msvc': [ '1.32.0' ],
+16 silly audit   'magic-string': [ '0.30.21' ],
+16 silly audit   'math-intrinsics': [ '1.1.0' ],
+16 silly audit   'mime-db': [ '1.52.0' ],
+16 silly audit   'mime-types': [ '2.1.35' ],
+16 silly audit   nanoid: [ '3.3.11' ],
+16 silly audit   picocolors: [ '1.1.1' ],
+16 silly audit   picomatch: [ '4.0.4', '2.3.2' ],
+16 silly audit   postcss: [ '8.5.12' ],
+16 silly audit   'proxy-from-env': [ '2.1.0' ],
+16 silly audit   'require-directory': [ '2.1.1' ],
+16 silly audit   rollup: [ '4.60.2' ],
+16 silly audit   rxjs: [ '7.8.2' ],
+16 silly audit   'shell-quote': [ '1.8.3' ],
+16 silly audit   'source-map-js': [ '1.2.1' ],
+16 silly audit   'string-width': [ '4.2.3' ],
+16 silly audit   'strip-ansi': [ '6.0.1' ],
+16 silly audit   tailwindcss: [ '4.2.4' ],
+16 silly audit   tapable: [ '2.3.3' ],
+16 silly audit   tinyglobby: [ '0.2.16' ],
+16 silly audit   'tree-kill': [ '1.2.2' ],
+16 silly audit   tslib: [ '2.8.1' ],
+16 silly audit   vite: [ '6.4.2' ],
+16 silly audit   'vite-plugin-full-reload': [ '1.2.0' ],
+16 silly audit   'wrap-ansi': [ '7.0.0' ],
+16 silly audit   y18n: [ '5.0.8' ],
+16 silly audit   yargs: [ '17.7.2' ],
+16 silly audit   'yargs-parser': [ '21.1.1' ],
+16 silly audit   '@tailwindcss/oxide-wasm32-wasi': [ '4.2.4' ]
+16 silly audit }
+17 verbose reify failed optional dependency /var/www/node_modules/lightningcss-win32-x64-msvc
+18 silly reify mark deleted [ '/var/www/node_modules/lightningcss-win32-x64-msvc' ]
+19 verbose reify failed optional dependency /var/www/node_modules/lightningcss-win32-arm64-msvc
+20 silly reify mark deleted [ '/var/www/node_modules/lightningcss-win32-arm64-msvc' ]
+21 verbose reify failed optional dependency /var/www/node_modules/lightningcss-linux-arm64-musl
+22 silly reify mark deleted [ '/var/www/node_modules/lightningcss-linux-arm64-musl' ]
+23 verbose reify failed optional dependency /var/www/node_modules/lightningcss-linux-arm64-gnu
+24 silly reify mark deleted [ '/var/www/node_modules/lightningcss-linux-arm64-gnu' ]
+25 verbose reify failed optional dependency /var/www/node_modules/lightningcss-linux-arm-gnueabihf
+26 silly reify mark deleted [ '/var/www/node_modules/lightningcss-linux-arm-gnueabihf' ]
+27 verbose reify failed optional dependency /var/www/node_modules/lightningcss-freebsd-x64
+28 silly reify mark deleted [ '/var/www/node_modules/lightningcss-freebsd-x64' ]
+29 verbose reify failed optional dependency /var/www/node_modules/lightningcss-darwin-x64
+30 silly reify mark deleted [ '/var/www/node_modules/lightningcss-darwin-x64' ]
+31 verbose reify failed optional dependency /var/www/node_modules/lightningcss-darwin-arm64
+32 silly reify mark deleted [ '/var/www/node_modules/lightningcss-darwin-arm64' ]
+33 verbose reify failed optional dependency /var/www/node_modules/lightningcss-android-arm64
+34 silly reify mark deleted [ '/var/www/node_modules/lightningcss-android-arm64' ]
+35 verbose reify failed optional dependency /var/www/node_modules/fsevents
+36 silly reify mark deleted [ '/var/www/node_modules/fsevents' ]
+37 verbose reify failed optional dependency /var/www/node_modules/@tailwindcss/oxide-win32-x64-msvc
+38 silly reify mark deleted [ '/var/www/node_modules/@tailwindcss/oxide-win32-x64-msvc' ]
+39 verbose reify failed optional dependency /var/www/node_modules/@tailwindcss/oxide-win32-arm64-msvc
+40 silly reify mark deleted [ '/var/www/node_modules/@tailwindcss/oxide-win32-arm64-msvc' ]
+41 verbose reify failed optional dependency /var/www/node_modules/@tailwindcss/oxide-linux-arm64-musl
+42 silly reify mark deleted [ '/var/www/node_modules/@tailwindcss/oxide-linux-arm64-musl' ]
+43 verbose reify failed optional dependency /var/www/node_modules/@tailwindcss/oxide-linux-arm64-gnu
+44 silly reify mark deleted [ '/var/www/node_modules/@tailwindcss/oxide-linux-arm64-gnu' ]
+45 verbose reify failed optional dependency /var/www/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf
+46 silly reify mark deleted [ '/var/www/node_modules/@tailwindcss/oxide-linux-arm-gnueabihf' ]
+47 verbose reify failed optional dependency /var/www/node_modules/@tailwindcss/oxide-freebsd-x64
+48 silly reify mark deleted [ '/var/www/node_modules/@tailwindcss/oxide-freebsd-x64' ]
+49 verbose reify failed optional dependency /var/www/node_modules/@tailwindcss/oxide-darwin-x64
+50 silly reify mark deleted [ '/var/www/node_modules/@tailwindcss/oxide-darwin-x64' ]
+51 verbose reify failed optional dependency /var/www/node_modules/@tailwindcss/oxide-darwin-arm64
+52 silly reify mark deleted [ '/var/www/node_modules/@tailwindcss/oxide-darwin-arm64' ]
+53 verbose reify failed optional dependency /var/www/node_modules/@tailwindcss/oxide-android-arm64
+54 silly reify mark deleted [ '/var/www/node_modules/@tailwindcss/oxide-android-arm64' ]
+55 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-win32-x64-msvc
+56 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-win32-x64-msvc' ]
+57 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-win32-x64-gnu
+58 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-win32-x64-gnu' ]
+59 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-win32-ia32-msvc
+60 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-win32-ia32-msvc' ]
+61 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-win32-arm64-msvc
+62 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-win32-arm64-msvc' ]
+63 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-openharmony-arm64
+64 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-openharmony-arm64' ]
+65 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-openbsd-x64
+66 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-openbsd-x64' ]
+67 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-linux-s390x-gnu
+68 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-linux-s390x-gnu' ]
+69 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-linux-riscv64-musl
+70 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-linux-riscv64-musl' ]
+71 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-linux-riscv64-gnu
+72 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-linux-riscv64-gnu' ]
+73 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-linux-ppc64-musl
+74 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-linux-ppc64-musl' ]
+75 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-linux-ppc64-gnu
+76 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-linux-ppc64-gnu' ]
+77 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-linux-loong64-musl
+78 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-linux-loong64-musl' ]
+79 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-linux-loong64-gnu
+80 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-linux-loong64-gnu' ]
+81 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-linux-arm64-musl
+82 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-linux-arm64-musl' ]
+83 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-linux-arm64-gnu
+84 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-linux-arm64-gnu' ]
+85 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-linux-arm-musleabihf
+86 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-linux-arm-musleabihf' ]
+87 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-linux-arm-gnueabihf
+88 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-linux-arm-gnueabihf' ]
+89 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-freebsd-x64
+90 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-freebsd-x64' ]
+91 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-freebsd-arm64
+92 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-freebsd-arm64' ]
+93 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-darwin-x64
+94 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-darwin-x64' ]
+95 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-darwin-arm64
+96 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-darwin-arm64' ]
+97 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-android-arm64
+98 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-android-arm64' ]
+99 verbose reify failed optional dependency /var/www/node_modules/@rollup/rollup-android-arm-eabi
+100 silly reify mark deleted [ '/var/www/node_modules/@rollup/rollup-android-arm-eabi' ]
+101 verbose reify failed optional dependency /var/www/node_modules/@esbuild/win32-x64
+102 silly reify mark deleted [ '/var/www/node_modules/@esbuild/win32-x64' ]
+103 verbose reify failed optional dependency /var/www/node_modules/@esbuild/win32-ia32
+104 silly reify mark deleted [ '/var/www/node_modules/@esbuild/win32-ia32' ]
+105 verbose reify failed optional dependency /var/www/node_modules/@esbuild/win32-arm64
+106 silly reify mark deleted [ '/var/www/node_modules/@esbuild/win32-arm64' ]
+107 verbose reify failed optional dependency /var/www/node_modules/@esbuild/sunos-x64
+108 silly reify mark deleted [ '/var/www/node_modules/@esbuild/sunos-x64' ]
+109 verbose reify failed optional dependency /var/www/node_modules/@esbuild/openharmony-arm64
+110 silly reify mark deleted [ '/var/www/node_modules/@esbuild/openharmony-arm64' ]
+111 verbose reify failed optional dependency /var/www/node_modules/@esbuild/openbsd-x64
+112 silly reify mark deleted [ '/var/www/node_modules/@esbuild/openbsd-x64' ]
+113 verbose reify failed optional dependency /var/www/node_modules/@esbuild/openbsd-arm64
+114 silly reify mark deleted [ '/var/www/node_modules/@esbuild/openbsd-arm64' ]
+115 verbose reify failed optional dependency /var/www/node_modules/@esbuild/netbsd-x64
+116 silly reify mark deleted [ '/var/www/node_modules/@esbuild/netbsd-x64' ]
+117 verbose reify failed optional dependency /var/www/node_modules/@esbuild/netbsd-arm64
+118 silly reify mark deleted [ '/var/www/node_modules/@esbuild/netbsd-arm64' ]
+119 verbose reify failed optional dependency /var/www/node_modules/@esbuild/linux-s390x
+120 silly reify mark deleted [ '/var/www/node_modules/@esbuild/linux-s390x' ]
+121 verbose reify failed optional dependency /var/www/node_modules/@esbuild/linux-riscv64
+122 silly reify mark deleted [ '/var/www/node_modules/@esbuild/linux-riscv64' ]
+123 verbose reify failed optional dependency /var/www/node_modules/@esbuild/linux-ppc64
+124 silly reify mark deleted [ '/var/www/node_modules/@esbuild/linux-ppc64' ]
+125 verbose reify failed optional dependency /var/www/node_modules/@esbuild/linux-mips64el
+126 silly reify mark deleted [ '/var/www/node_modules/@esbuild/linux-mips64el' ]
+127 verbose reify failed optional dependency /var/www/node_modules/@esbuild/linux-loong64
+128 silly reify mark deleted [ '/var/www/node_modules/@esbuild/linux-loong64' ]
+129 verbose reify failed optional dependency /var/www/node_modules/@esbuild/linux-ia32
+130 silly reify mark deleted [ '/var/www/node_modules/@esbuild/linux-ia32' ]
+131 verbose reify failed optional dependency /var/www/node_modules/@esbuild/linux-arm64
+132 silly reify mark deleted [ '/var/www/node_modules/@esbuild/linux-arm64' ]
+133 verbose reify failed optional dependency /var/www/node_modules/@esbuild/linux-arm
+134 silly reify mark deleted [ '/var/www/node_modules/@esbuild/linux-arm' ]
+135 verbose reify failed optional dependency /var/www/node_modules/@esbuild/freebsd-x64
+136 silly reify mark deleted [ '/var/www/node_modules/@esbuild/freebsd-x64' ]
+137 verbose reify failed optional dependency /var/www/node_modules/@esbuild/freebsd-arm64
+138 silly reify mark deleted [ '/var/www/node_modules/@esbuild/freebsd-arm64' ]
+139 verbose reify failed optional dependency /var/www/node_modules/@esbuild/darwin-x64
+140 silly reify mark deleted [ '/var/www/node_modules/@esbuild/darwin-x64' ]
+141 verbose reify failed optional dependency /var/www/node_modules/@esbuild/darwin-arm64
+142 silly reify mark deleted [ '/var/www/node_modules/@esbuild/darwin-arm64' ]
+143 verbose reify failed optional dependency /var/www/node_modules/@esbuild/android-x64
+144 silly reify mark deleted [ '/var/www/node_modules/@esbuild/android-x64' ]
+145 verbose reify failed optional dependency /var/www/node_modules/@esbuild/android-arm64
+146 silly reify mark deleted [ '/var/www/node_modules/@esbuild/android-arm64' ]
+147 verbose reify failed optional dependency /var/www/node_modules/@esbuild/android-arm
+148 silly reify mark deleted [ '/var/www/node_modules/@esbuild/android-arm' ]
+149 verbose reify failed optional dependency /var/www/node_modules/@esbuild/aix-ppc64
+150 silly reify mark deleted [ '/var/www/node_modules/@esbuild/aix-ppc64' ]
+151 silly tarball no local data for yargs-parser@https://registry.npmjs.org/yargs-parser/-/yargs-parser-21.1.1.tgz. Extracting by manifest.
+152 silly tarball no local data for yargs@https://registry.npmjs.org/yargs/-/yargs-17.7.2.tgz. Extracting by manifest.
+153 silly tarball no local data for y18n@https://registry.npmjs.org/y18n/-/y18n-5.0.8.tgz. Extracting by manifest.
+154 silly tarball no local data for wrap-ansi@https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz. Extracting by manifest.
+155 silly tarball no local data for vite-plugin-full-reload@https://registry.npmjs.org/vite-plugin-full-reload/-/vite-plugin-full-reload-1.2.0.tgz. Extracting by manifest.
+156 silly tarball no local data for vite@https://registry.npmjs.org/vite/-/vite-6.4.2.tgz. Extracting by manifest.
+157 silly tarball no local data for tslib@https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz. Extracting by manifest.
+158 silly tarball no local data for tree-kill@https://registry.npmjs.org/tree-kill/-/tree-kill-1.2.2.tgz. Extracting by manifest.
+159 silly tarball no local data for tinyglobby@https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.16.tgz. Extracting by manifest.
+160 silly tarball no local data for tapable@https://registry.npmjs.org/tapable/-/tapable-2.3.3.tgz. Extracting by manifest.
+161 silly tarball no local data for tailwindcss@https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.2.4.tgz. Extracting by manifest.
+162 silly tarball no local data for supports-color@https://registry.npmjs.org/supports-color/-/supports-color-8.1.1.tgz. Extracting by manifest.
+163 silly tarball no local data for strip-ansi@https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz. Extracting by manifest.
+164 silly tarball no local data for string-width@https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz. Extracting by manifest.
+165 silly tarball no local data for source-map-js@https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz. Extracting by manifest.
+166 silly tarball no local data for shell-quote@https://registry.npmjs.org/shell-quote/-/shell-quote-1.8.3.tgz. Extracting by manifest.
+167 silly tarball no local data for rxjs@https://registry.npmjs.org/rxjs/-/rxjs-7.8.2.tgz. Extracting by manifest.
+168 silly tarball no local data for rollup@https://registry.npmjs.org/rollup/-/rollup-4.60.2.tgz. Extracting by manifest.
+169 silly tarball no local data for require-directory@https://registry.npmjs.org/require-directory/-/require-directory-2.1.1.tgz. Extracting by manifest.
+170 silly tarball no local data for proxy-from-env@https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-2.1.0.tgz. Extracting by manifest.
+171 silly tarball no local data for postcss@https://registry.npmjs.org/postcss/-/postcss-8.5.12.tgz. Extracting by manifest.
+172 silly tarball no local data for picomatch@https://registry.npmjs.org/picomatch/-/picomatch-4.0.4.tgz. Extracting by manifest.
+173 silly tarball no local data for picocolors@https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz. Extracting by manifest.
+174 silly tarball no local data for nanoid@https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz. Extracting by manifest.
+175 silly tarball no local data for mime-types@https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz. Extracting by manifest.
+176 silly tarball no local data for mime-db@https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz. Extracting by manifest.
+177 silly tarball no local data for math-intrinsics@https://registry.npmjs.org/math-intrinsics/-/math-intrinsics-1.1.0.tgz. Extracting by manifest.
+178 silly tarball no local data for magic-string@https://registry.npmjs.org/magic-string/-/magic-string-0.30.21.tgz. Extracting by manifest.
+179 silly tarball no local data for lightningcss-linux-x64-musl@https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.32.0.tgz. Extracting by manifest.
+180 silly tarball no local data for lightningcss-linux-x64-gnu@https://registry.npmjs.org/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.32.0.tgz. Extracting by manifest.
+181 silly tarball no local data for lightningcss@https://registry.npmjs.org/lightningcss/-/lightningcss-1.32.0.tgz. Extracting by manifest.
+182 silly tarball no local data for laravel-vite-plugin@https://registry.npmjs.org/laravel-vite-plugin/-/laravel-vite-plugin-1.3.0.tgz. Extracting by manifest.
+183 silly tarball no local data for jiti@https://registry.npmjs.org/jiti/-/jiti-2.6.1.tgz. Extracting by manifest.
+184 silly tarball no local data for is-fullwidth-code-point@https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz. Extracting by manifest.
+185 silly tarball no local data for hasown@https://registry.npmjs.org/hasown/-/hasown-2.0.3.tgz. Extracting by manifest.
+186 silly tarball no local data for has-tostringtag@https://registry.npmjs.org/has-tostringtag/-/has-tostringtag-1.0.2.tgz. Extracting by manifest.
+187 silly tarball no local data for has-flag@https://registry.npmjs.org/has-flag/-/has-flag-4.0.0.tgz. Extracting by manifest.
+188 silly tarball no local data for has-symbols@https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz. Extracting by manifest.
+189 silly tarball no local data for graceful-fs@https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz. Extracting by manifest.
+190 silly tarball no local data for gopd@https://registry.npmjs.org/gopd/-/gopd-1.2.0.tgz. Extracting by manifest.
+191 silly tarball no local data for get-proto@https://registry.npmjs.org/get-proto/-/get-proto-1.0.1.tgz. Extracting by manifest.
+192 silly tarball no local data for get-intrinsic@https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.3.0.tgz. Extracting by manifest.
+193 silly tarball no local data for get-caller-file@https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz. Extracting by manifest.
+194 silly tarball no local data for function-bind@https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz. Extracting by manifest.
+195 silly tarball no local data for form-data@https://registry.npmjs.org/form-data/-/form-data-4.0.5.tgz. Extracting by manifest.
+196 silly tarball no local data for follow-redirects@https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.16.0.tgz. Extracting by manifest.
+197 silly tarball no local data for fdir@https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz. Extracting by manifest.
+198 silly tarball no local data for escalade@https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz. Extracting by manifest.
+199 silly tarball no local data for esbuild@https://registry.npmjs.org/esbuild/-/esbuild-0.25.12.tgz. Extracting by manifest.
+200 silly tarball no local data for es-set-tostringtag@https://registry.npmjs.org/es-set-tostringtag/-/es-set-tostringtag-2.1.0.tgz. Extracting by manifest.
+201 silly tarball no local data for es-object-atoms@https://registry.npmjs.org/es-object-atoms/-/es-object-atoms-1.1.1.tgz. Extracting by manifest.
+202 silly tarball no local data for es-errors@https://registry.npmjs.org/es-errors/-/es-errors-1.3.0.tgz. Extracting by manifest.
+203 silly tarball no local data for es-define-property@https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz. Extracting by manifest.
+204 silly tarball no local data for enhanced-resolve@https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.21.0.tgz. Extracting by manifest.
+205 silly tarball no local data for emoji-regex@https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz. Extracting by manifest.
+206 silly tarball no local data for dunder-proto@https://registry.npmjs.org/dunder-proto/-/dunder-proto-1.0.1.tgz. Extracting by manifest.
+207 silly tarball no local data for detect-libc@https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz. Extracting by manifest.
+208 silly tarball no local data for delayed-stream@https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz. Extracting by manifest.
+209 silly tarball no local data for concurrently@https://registry.npmjs.org/concurrently/-/concurrently-9.2.1.tgz. Extracting by manifest.
+210 silly tarball no local data for combined-stream@https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz. Extracting by manifest.
+211 silly tarball no local data for color-name@https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz. Extracting by manifest.
+212 silly tarball no local data for color-convert@https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz. Extracting by manifest.
+213 silly tarball no local data for cliui@https://registry.npmjs.org/cliui/-/cliui-8.0.1.tgz. Extracting by manifest.
+214 silly tarball no local data for call-bind-apply-helpers@https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz. Extracting by manifest.
+215 silly tarball no local data for chalk@https://registry.npmjs.org/chalk/-/chalk-4.1.2.tgz. Extracting by manifest.
+216 silly tarball no local data for axios@https://registry.npmjs.org/axios/-/axios-1.15.2.tgz. Extracting by manifest.
+217 silly tarball no local data for asynckit@https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz. Extracting by manifest.
+218 silly tarball no local data for ansi-styles@https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz. Extracting by manifest.
+219 silly tarball no local data for ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz. Extracting by manifest.
+220 silly tarball no local data for @tailwindcss/vite@https://registry.npmjs.org/@tailwindcss/vite/-/vite-4.2.4.tgz. Extracting by manifest.
+221 silly tarball no local data for @tailwindcss/oxide-linux-x64-musl@https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-musl/-/oxide-linux-x64-musl-4.2.4.tgz. Extracting by manifest.
+222 silly tarball no local data for @tailwindcss/oxide-linux-x64-gnu@https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-gnu/-/oxide-linux-x64-gnu-4.2.4.tgz. Extracting by manifest.
+223 silly tarball no local data for @tailwindcss/oxide@https://registry.npmjs.org/@tailwindcss/oxide/-/oxide-4.2.4.tgz. Extracting by manifest.
+224 silly tarball no local data for @tailwindcss/node@https://registry.npmjs.org/@tailwindcss/node/-/node-4.2.4.tgz. Extracting by manifest.
+225 silly tarball no local data for @rollup/rollup-linux-x64-musl@https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.60.2.tgz. Extracting by manifest.
+226 silly tarball no local data for @rollup/rollup-linux-x64-gnu@https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.60.2.tgz. Extracting by manifest.
+227 silly tarball no local data for @jridgewell/trace-mapping@https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.31.tgz. Extracting by manifest.
+228 silly tarball no local data for @jridgewell/sourcemap-codec@https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz. Extracting by manifest.
+229 silly tarball no local data for @jridgewell/resolve-uri@https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz. Extracting by manifest.
+230 silly tarball no local data for @jridgewell/remapping@https://registry.npmjs.org/@jridgewell/remapping/-/remapping-2.3.5.tgz. Extracting by manifest.
+231 silly tarball no local data for @jridgewell/gen-mapping@https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.13.tgz. Extracting by manifest.
+232 silly tarball no local data for @esbuild/linux-x64@https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.25.12.tgz. Extracting by manifest.
+233 silly tarball no local data for picomatch@https://registry.npmjs.org/picomatch/-/picomatch-2.3.2.tgz. Extracting by manifest.
+234 silly tarball no local data for supports-color@https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz. Extracting by manifest.
+235 silly tarball no local data for @types/estree@https://registry.npmjs.org/@types/estree/-/estree-1.0.8.tgz. Extracting by manifest.
+236 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 679ms
+237 silly audit report {
+237 silly audit report   axios: [
+237 silly audit report     {
+237 silly audit report       id: 1120547,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-hfxv-24rg-xrqf',
+237 silly audit report       title: 'Axios: Regular Expression Denial of Service (ReDoS) via Cookie Name Injection',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=1.0.0 <1.16.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1120643,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-777c-7fjr-54vf',
+237 silly audit report       title: 'Allocation of Resources Without Limits or Throttling in Axios',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=1.7.0 <1.16.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1120645,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-p92q-9vqr-4j8v',
+237 silly audit report       title: 'Axios: Proxy-Authorization Credential Leak to Origin Server Across HTTP-to-HTTPS Redirect in Axios Node.js HTTP Adapter',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=1.0.0 <1.16.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1120647,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-j5f8-grm9-p9fc',
+237 silly audit report       title: 'Axios: Proxy-Authorization header leaks to redirect target when proxy is re-evaluated to direct connection',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=1.0.0 <1.16.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1120650,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-35jp-ww65-95wh',
+237 silly audit report       title: 'axios Vulnerable to Full Man-in-the-Middle via Prototype Pollution Gadget in `config.proxy`',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=1.0.0 <1.16.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1120652,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-898c-q2cr-xwhg',
+237 silly audit report       title: 'axios has DoS & Header Injection via Prototype Pollution Read-Side Gadgets in axios merge functions',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.0.0 <1.16.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1120653,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-654m-c8p4-x5fp',
+237 silly audit report       title: 'Axios has a Patch Bypass: Proxy-Authorization Header Injection via Prototype Pollution — Incomplete Null-Prototype Fix',
+237 silly audit report       severity: 'low',
+237 silly audit report       vulnerable_versions: '=1.15.2',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1123824,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-pjwm-pj3p-43mv',
+237 silly audit report       title: "axios's shouldBypassProxy does not recognize IPv4-mapped IPv6 addresses, allowing NO_PROXY bypass (incomplete fix for CVE-2025-62718)",
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=1.15.0 <1.16.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1147949,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-mmx7-hfxf-jppx',
+237 silly audit report       title: 'Axios: Prototype pollution gadgets can alter axios request construction',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.0.0 <1.18.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1147950,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-pmv8-rq9r-6j72',
+237 silly audit report       title: 'Axios: Deep formToJSON Key Recursion Can Cause Denial of Service',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.0.0 <1.18.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1138749,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-xj6q-8x83-jv6g',
+237 silly audit report       title: 'Axios: Prototype pollution auth subfields can inject Basic auth',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.15.2 <1.18.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1193664,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-hcpx-6fm6-wx23',
+237 silly audit report       title: 'Axios form serializer maxDepth bypass via {} metatoken',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.15.1 <1.18.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1153175,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-mwf2-3pr3-8698',
+237 silly audit report       title: 'Axios: HTTP/2 streamed uploads bypass `maxBodyLength`',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.13.0 <1.18.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1153178,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-gcfj-64vw-6mp9',
+237 silly audit report       title: 'Axios Node HTTP adapter can use an inherited proxy after interceptor config cloning',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=1.15.2 <1.18.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1153180,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-7q8q-rj6j-mhjq',
+237 silly audit report       title: 'Axios: Nested axios option objects can consume polluted prototype values',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.0.0 <1.18.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1153182,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-jqh4-m9w3-8hp9',
+237 silly audit report       title: 'Axios: Fetch adapter `ReadableStream` uploads bypass `maxBodyLength`',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.7.0 <1.18.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1153184,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-f4gw-2p7v-4548',
+237 silly audit report       title: 'Axios: NO_PROXY bypass for 0.0.0.0 local addresses in axios',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.15.0 <1.18.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1153185,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-42h9-826w-cgv3',
+237 silly audit report       title: 'Axios: Excessive recursion in formDataToJSON can cause denial of service',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.0.0 <1.18.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1240628,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-m8m8-qj5v-23w3',
+237 silly audit report       title: 'Axios: Node HTTP adapter prototype-pollution gadget allows request socket hijack via inherited createConnection',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=1.15.2 <1.20.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1240629,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-44g4-m2mj-wpvx',
+237 silly audit report       title: 'Axios: CIDR-form NO_PROXY entries are ignored, causing proxy exclusion bypass for internal IP ranges',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.15.0 <1.20.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1240600,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-vh66-26gq-q6x8',
+237 silly audit report       title: 'Axios: Prototype pollution gadget in fetch adapter can alter outbound requests',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.7.0 <1.20.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1240601,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-9fr6-4gfg-395g',
+237 silly audit report       title: 'Axios: Prototype-Pollution Gadget in the Default Instance Allows Inherited Object.prototype.method to Override HTTP Method',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.0.0 <1.20.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1240604,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-mghh-pgcx-3jjj',
+237 silly audit report       title: 'Axios: ReDoS (O(N²)) in shouldBypassProxy host normalization, reachable via untrusted redirect Location',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=1.15.0 <1.20.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1240605,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-x97p-jq2g-jp4f',
+237 silly audit report       title: 'Axios: Prototype Pollution Gadget in axios toFormData Options',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=1.15.1 <1.20.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1240607,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-3pq3-5fj3-cg6v',
+237 silly audit report       title: 'Axios: HTTP/2 adapter bypasses configured DNS lookup and proxy controls',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=1.13.0 <1.20.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1240608,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-542g-h47m-68v8',
+237 silly audit report       title: "Axios: Denial of Service via Unhandled 'error' Event in HTTP/2 ClientHttp2Session Initialization",
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=1.13.0 <1.20.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1240626,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-j8rh-479h-cp32',
+237 silly audit report       title: 'Axios: Header Injection via Inherited headers After Minimal Interceptor',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.0.0 <1.20.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1240627,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-4hqw-qxg8-jxx2',
+237 silly audit report       title: 'Axios: Fetch Adapter Header Injection via Inherited FormData getHeaders',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '>=1.12.0 <1.20.0',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     }
+237 silly audit report   ],
+237 silly audit report   'form-data': [
+237 silly audit report     {
+237 silly audit report       id: 1120743,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-hmw2-7cc7-3qxx',
+237 silly audit report       title: 'form-data: CRLF injection in form-data via unescaped multipart field names and filenames',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=4.0.0 <4.0.6',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     }
+237 silly audit report   ],
+237 silly audit report   nanoid: [
+237 silly audit report     {
+237 silly audit report       id: 1138811,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-28wg-ghj8-5hjv',
+237 silly audit report       title: 'nanoid: non-secure generators can loop indefinitely with negative size',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '<3.3.16',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1139427,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-2v37-7h3g-55p8',
+237 silly audit report       title: 'nanoid: custom generators can loop indefinitely when size is zero',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '<3.3.18',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1153189,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-xwg4-73v4-xw9w',
+237 silly audit report       title: 'nanoid: Integer Overflow or Wraparound',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '<3.3.12',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     }
+237 silly audit report   ],
+237 silly audit report   postcss: [
+237 silly audit report     {
+237 silly audit report       id: 1130709,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-fxqj-rqcc-2cmp',
+237 silly audit report       title: 'PostCSS: incomplete fix of GHSA-6g55-p6wh-862q — attacker-controlled sourceMappingURL reads arbitrary .map files when `from` is unset',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '<=8.5.22',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1139510,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-r28c-9q8g-f849',
+237 silly audit report       title: 'PostCSS: Path Traversal in Previous Source Map Auto-Loading (sourceMappingURL) leads to Arbitrary .map File Disclosure',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '<=8.5.17',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     }
+237 silly audit report   ],
+237 silly audit report   'shell-quote': [
+237 silly audit report     {
+237 silly audit report       id: 1120422,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-w7jw-789q-3m8p',
+237 silly audit report       title: 'shell-quote quote() does not escape newlines in object .op values',
+237 silly audit report       severity: 'critical',
+237 silly audit report       vulnerable_versions: '>=1.1.0 <=1.8.3',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1123944,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-395f-4hp3-45gv',
+237 silly audit report       title: 'shell-quote: Quadratic-complexity Denial of Service in `parse()` (CWE-407)',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '<=1.8.4',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     }
+237 silly audit report   ],
+237 silly audit report   'source-map-js': [
+237 silly audit report     {
+237 silly audit report       id: 1241209,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-68fv-2mgg-jv7q',
+237 silly audit report       title: 'source-map-js allows event-loop denial of service through indexed source-map section offsets',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '>=1.0.0 <1.2.2',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     }
+237 silly audit report   ],
+237 silly audit report   vite: [
+237 silly audit report     {
+237 silly audit report       id: 1120784,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-v6wh-96g9-6wx3',
+237 silly audit report       title: 'launch-editor: NTLMv2 hash disclosure via UNC path handling on Windows',
+237 silly audit report       severity: 'moderate',
+237 silly audit report       vulnerable_versions: '<=6.4.2',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     },
+237 silly audit report     {
+237 silly audit report       id: 1123525,
+237 silly audit report       url: 'https://github.com/advisories/GHSA-fx2h-pf6j-xcff',
+237 silly audit report       title: 'vite: `server.fs.deny` bypass on Windows alternate paths',
+237 silly audit report       severity: 'high',
+237 silly audit report       vulnerable_versions: '<=6.4.2',
+237 silly audit report       cwe: [Array],
+237 silly audit report       cvss: [Object]
+237 silly audit report     }
+237 silly audit report   ]
+237 silly audit report }
+238 silly packumentCache corgi:https://registry.npmjs.org/axios cache-miss
+239 silly packumentCache corgi:https://registry.npmjs.org/form-data cache-miss
+240 silly packumentCache corgi:https://registry.npmjs.org/nanoid cache-miss
+241 silly packumentCache corgi:https://registry.npmjs.org/postcss cache-miss
+242 silly packumentCache corgi:https://registry.npmjs.org/shell-quote cache-miss
+243 silly packumentCache corgi:https://registry.npmjs.org/source-map-js cache-miss
+244 silly packumentCache corgi:https://registry.npmjs.org/vite cache-miss
+245 http fetch GET 200 https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-2.1.0.tgz 1074ms (cache miss)
+246 http fetch GET 200 https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.16.tgz 1083ms (cache miss)
+247 http fetch GET 200 https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz 1064ms (cache miss)
+248 http fetch GET 200 https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz 1057ms (cache miss)
+249 http fetch GET 200 https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz 1041ms (cache miss)
+250 http fetch GET 200 https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz 1045ms (cache miss)
+251 http fetch GET 200 https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz 1103ms (cache miss)
+252 http fetch GET 200 https://registry.npmjs.org/tree-kill/-/tree-kill-1.2.2.tgz 1110ms (cache miss)
+253 http fetch GET 200 https://registry.npmjs.org/y18n/-/y18n-5.0.8.tgz 1114ms (cache miss)
+254 http fetch GET 200 https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz 1115ms (cache miss)
+255 http fetch GET 200 https://registry.npmjs.org/supports-color/-/supports-color-8.1.1.tgz 1108ms (cache miss)
+256 http fetch GET 200 https://registry.npmjs.org/math-intrinsics/-/math-intrinsics-1.1.0.tgz 1097ms (cache miss)
+257 http fetch GET 200 https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz 1092ms (cache miss)
+258 http fetch GET 200 https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz 1084ms (cache miss)
+259 http fetch GET 200 https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz 1083ms (cache miss)
+260 http fetch GET 200 https://registry.npmjs.org/has-flag/-/has-flag-4.0.0.tgz 1093ms (cache miss)
+261 http fetch GET 200 https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz 1079ms (cache miss)
+262 http fetch GET 200 https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz 1065ms (cache miss)
+263 http fetch GET 200 https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz 1061ms (cache miss)
+264 http fetch GET 200 https://registry.npmjs.org/shell-quote/-/shell-quote-1.8.3.tgz 1118ms (cache miss)
+265 http fetch GET 200 https://registry.npmjs.org/require-directory/-/require-directory-2.1.1.tgz 1118ms (cache miss)
+266 http fetch GET 200 https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz 1112ms (cache miss)
+267 http fetch GET 200 https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz 1113ms (cache miss)
+268 http fetch GET 200 https://registry.npmjs.org/get-proto/-/get-proto-1.0.1.tgz 1102ms (cache miss)
+269 http fetch GET 200 https://registry.npmjs.org/hasown/-/hasown-2.0.3.tgz 1108ms (cache miss)
+270 http fetch GET 200 https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz 1095ms (cache miss)
+271 http fetch GET 200 https://registry.npmjs.org/es-object-atoms/-/es-object-atoms-1.1.1.tgz 1093ms (cache miss)
+272 http fetch GET 200 https://registry.npmjs.org/dunder-proto/-/dunder-proto-1.0.1.tgz 1082ms (cache miss)
+273 http fetch GET 200 https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz 1074ms (cache miss)
+274 http fetch GET 200 https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz 1074ms (cache miss)
+275 http fetch GET 200 https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz 1078ms (cache miss)
+276 http fetch GET 200 https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz 1060ms (cache miss)
+277 http fetch GET 200 https://registry.npmjs.org/vite-plugin-full-reload/-/vite-plugin-full-reload-1.2.0.tgz 1143ms (cache miss)
+278 http fetch GET 200 https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz 1136ms (cache miss)
+279 http fetch GET 200 https://registry.npmjs.org/gopd/-/gopd-1.2.0.tgz 1117ms (cache miss)
+280 http fetch GET 200 https://registry.npmjs.org/esbuild/-/esbuild-0.25.12.tgz 1107ms (cache miss)
+281 http fetch GET 200 https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz 1089ms (cache miss)
+282 http fetch GET 200 https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz 1073ms (cache miss)
+283 http fetch GET 200 https://registry.npmjs.org/source-map-js 570ms (cache miss)
+284 silly packumentCache corgi:https://registry.npmjs.org/source-map-js set size:undefined disposed:false
+285 http fetch GET 200 https://registry.npmjs.org/has-tostringtag/-/has-tostringtag-1.0.2.tgz 1132ms (cache miss)
+286 http fetch GET 200 https://registry.npmjs.org/picomatch/-/picomatch-2.3.2.tgz 1081ms (cache miss)
+287 http fetch GET 200 https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz 1138ms (cache miss)
+288 http fetch GET 200 https://registry.npmjs.org/cliui/-/cliui-8.0.1.tgz 1109ms (cache miss)
+289 http fetch GET 200 https://registry.npmjs.org/chalk/-/chalk-4.1.2.tgz 1107ms (cache miss)
+290 http fetch GET 200 https://registry.npmjs.org/@tailwindcss/vite/-/vite-4.2.4.tgz 1104ms (cache miss)
+291 http fetch GET 200 https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz 1126ms (cache miss)
+292 http fetch GET 200 https://registry.npmjs.org/@tailwindcss/oxide/-/oxide-4.2.4.tgz 1108ms (cache miss)
+293 http fetch GET 200 https://registry.npmjs.org/shell-quote 603ms (cache miss)
+294 silly packumentCache corgi:https://registry.npmjs.org/shell-quote set size:undefined disposed:false
+295 http fetch GET 200 https://registry.npmjs.org/es-set-tostringtag/-/es-set-tostringtag-2.1.0.tgz 1149ms (cache miss)
+296 http fetch GET 200 https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz 1155ms (cache miss)
+297 http fetch GET 200 https://registry.npmjs.org/form-data 634ms (cache miss)
+298 silly packumentCache corgi:https://registry.npmjs.org/form-data set size:undefined disposed:false
+299 http fetch GET 200 https://registry.npmjs.org/@types/estree/-/estree-1.0.8.tgz 1137ms (cache miss)
+300 http fetch GET 200 https://registry.npmjs.org/picomatch/-/picomatch-4.0.4.tgz 1212ms (cache miss)
+301 http fetch GET 200 https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.16.0.tgz 1190ms (cache miss)
+302 http fetch GET 200 https://registry.npmjs.org/form-data/-/form-data-4.0.5.tgz 1197ms (cache miss)
+303 http fetch GET 200 https://registry.npmjs.org/laravel-vite-plugin/-/laravel-vite-plugin-1.3.0.tgz 1222ms (cache miss)
+304 http fetch GET 200 https://registry.npmjs.org/es-errors/-/es-errors-1.3.0.tgz 1204ms (cache miss)
+305 http fetch GET 200 https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz 1241ms (cache miss)
+306 http fetch GET 200 https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz 1243ms (cache miss)
+307 http fetch GET 200 https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.3.0.tgz 1230ms (cache miss)
+308 http fetch GET 200 https://registry.npmjs.org/nanoid 698ms (cache miss)
+309 silly packumentCache corgi:https://registry.npmjs.org/nanoid set size:undefined disposed:false
+310 http fetch GET 200 https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz 1305ms (cache miss)
+311 http fetch GET 200 https://registry.npmjs.org/axios 741ms (cache miss)
+312 silly packumentCache corgi:https://registry.npmjs.org/axios set size:undefined disposed:false
+313 http fetch GET 200 https://registry.npmjs.org/tapable/-/tapable-2.3.3.tgz 1410ms (cache miss)
+314 http fetch GET 200 https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz 1341ms (cache miss)
+315 http fetch GET 200 https://registry.npmjs.org/yargs-parser/-/yargs-parser-21.1.1.tgz 1425ms (cache miss)
+316 http fetch GET 200 https://registry.npmjs.org/@jridgewell/remapping/-/remapping-2.3.5.tgz 1354ms (cache miss)
+317 http fetch GET 200 https://registry.npmjs.org/postcss 853ms (cache miss)
+318 silly packumentCache corgi:https://registry.npmjs.org/postcss set size:undefined disposed:false
+319 http fetch GET 200 https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.13.tgz 1389ms (cache miss)
+320 http fetch GET 200 https://registry.npmjs.org/@tailwindcss/node/-/node-4.2.4.tgz 1400ms (cache miss)
+321 http fetch GET 200 https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz 1496ms (cache miss)
+322 http fetch GET 200 https://registry.npmjs.org/magic-string/-/magic-string-0.30.21.tgz 1541ms (cache miss)
+323 http fetch GET 200 https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.31.tgz 1491ms (cache miss)
+324 http fetch GET 200 https://registry.npmjs.org/lightningcss/-/lightningcss-1.32.0.tgz 1549ms (cache miss)
+325 http fetch GET 200 https://registry.npmjs.org/postcss/-/postcss-8.5.12.tgz 1574ms (cache miss)
+326 http fetch GET 200 https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.21.0.tgz 1579ms (cache miss)
+327 http fetch GET 200 https://registry.npmjs.org/yargs/-/yargs-17.7.2.tgz 1707ms (cache miss)
+328 http fetch GET 200 https://registry.npmjs.org/jiti/-/jiti-2.6.1.tgz 1711ms (cache miss)
+329 http fetch GET 200 https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.2.4.tgz 1746ms (cache miss)
+330 http fetch GET 200 https://registry.npmjs.org/concurrently/-/concurrently-9.2.1.tgz 1731ms (cache miss)
+331 http fetch GET 200 https://registry.npmjs.org/vite 1250ms (cache miss)
+332 silly packumentCache corgi:https://registry.npmjs.org/vite set size:undefined disposed:false
+333 http fetch GET 200 https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.60.2.tgz 1861ms (cache miss)
+334 http fetch GET 200 https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.60.2.tgz 1878ms (cache miss)
+335 http fetch GET 200 https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-gnu/-/oxide-linux-x64-gnu-4.2.4.tgz 2069ms (cache miss)
+336 http fetch GET 200 https://registry.npmjs.org/rollup/-/rollup-4.60.2.tgz 2153ms (cache miss)
+337 silly packumentCache corgi:https://registry.npmjs.org/concurrently cache-miss
+338 http fetch GET 200 https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-musl/-/oxide-linux-x64-musl-4.2.4.tgz 2114ms (cache miss)
+339 http fetch GET 200 https://registry.npmjs.org/vite/-/vite-6.4.2.tgz 2191ms (cache miss)
+340 http fetch GET 200 https://registry.npmjs.org/concurrently 62ms (cache miss)
+341 silly packumentCache corgi:https://registry.npmjs.org/concurrently set size:undefined disposed:false
+342 silly packumentCache corgi:https://registry.npmjs.org/@tailwindcss%2fnode cache-miss
+343 http fetch GET 200 https://registry.npmjs.org/axios/-/axios-1.15.2.tgz 2203ms (cache miss)
+344 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2fnode 115ms (cache miss)
+345 silly packumentCache corgi:https://registry.npmjs.org/@tailwindcss%2fnode set size:undefined disposed:false
+346 silly packumentCache corgi:https://registry.npmjs.org/@tailwindcss%2fvite cache-miss
+347 silly packumentCache corgi:https://registry.npmjs.org/laravel-vite-plugin cache-miss
+348 http fetch GET 200 https://registry.npmjs.org/laravel-vite-plugin 32ms (cache miss)
+349 silly packumentCache corgi:https://registry.npmjs.org/laravel-vite-plugin set size:undefined disposed:false
+350 http fetch GET 200 https://registry.npmjs.org/@tailwindcss%2fvite 167ms (cache miss)
+351 silly packumentCache corgi:https://registry.npmjs.org/@tailwindcss%2fvite set size:undefined disposed:false
+352 http fetch GET 200 https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.32.0.tgz 2723ms (cache miss)
+353 http fetch GET 200 https://registry.npmjs.org/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.32.0.tgz 2727ms (cache miss)
+354 http fetch GET 200 https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.25.12.tgz 2678ms (cache miss)
+355 http fetch GET 200 https://registry.npmjs.org/rxjs/-/rxjs-7.8.2.tgz 3180ms (cache miss)
+356 info run esbuild@0.25.12 postinstall node_modules/esbuild node install.js
+357 info run esbuild@0.25.12 postinstall { code: 0, signal: null }
+358 silly ADD node_modules/yargs-parser
+359 silly ADD node_modules/yargs
+360 silly ADD node_modules/y18n
+361 silly ADD node_modules/wrap-ansi
+362 silly ADD node_modules/vite-plugin-full-reload
+363 silly ADD node_modules/vite-plugin-full-reload/node_modules/picomatch
+364 silly ADD node_modules/vite
+365 silly ADD node_modules/tslib
+366 silly ADD node_modules/tree-kill
+367 silly ADD node_modules/tinyglobby
+368 silly ADD node_modules/tapable
+369 silly ADD node_modules/tailwindcss
+370 silly ADD node_modules/supports-color
+371 silly ADD node_modules/strip-ansi
+372 silly ADD node_modules/string-width
+373 silly ADD node_modules/source-map-js
+374 silly ADD node_modules/shell-quote
+375 silly ADD node_modules/rxjs
+376 silly ADD node_modules/rollup
+377 silly ADD node_modules/require-directory
+378 silly ADD node_modules/proxy-from-env
+379 silly ADD node_modules/postcss
+380 silly ADD node_modules/picomatch
+381 silly ADD node_modules/picocolors
+382 silly ADD node_modules/nanoid
+383 silly ADD node_modules/mime-types
+384 silly ADD node_modules/mime-db
+385 silly ADD node_modules/math-intrinsics
+386 silly ADD node_modules/magic-string
+387 silly ADD
+388 silly ADD
+389 silly ADD node_modules/lightningcss-linux-x64-musl
+390 silly ADD node_modules/lightningcss-linux-x64-gnu
+391 silly ADD
+392 silly ADD
+393 silly ADD
+394 silly ADD
+395 silly ADD
+396 silly ADD
+397 silly ADD
+398 silly ADD node_modules/lightningcss
+399 silly ADD node_modules/laravel-vite-plugin
+400 silly ADD node_modules/jiti
+401 silly ADD node_modules/is-fullwidth-code-point
+402 silly ADD node_modules/hasown
+403 silly ADD node_modules/has-tostringtag
+404 silly ADD node_modules/has-symbols
+405 silly ADD node_modules/has-flag
+406 silly ADD node_modules/graceful-fs
+407 silly ADD node_modules/gopd
+408 silly ADD node_modules/get-proto
+409 silly ADD node_modules/get-intrinsic
+410 silly ADD node_modules/get-caller-file
+411 silly ADD node_modules/function-bind
+412 silly ADD
+413 silly ADD node_modules/form-data
+414 silly ADD node_modules/follow-redirects
+415 silly ADD node_modules/fdir
+416 silly ADD node_modules/escalade
+417 silly ADD node_modules/esbuild
+418 silly ADD node_modules/es-set-tostringtag
+419 silly ADD node_modules/es-object-atoms
+420 silly ADD node_modules/es-errors
+421 silly ADD node_modules/es-define-property
+422 silly ADD node_modules/enhanced-resolve
+423 silly ADD node_modules/emoji-regex
+424 silly ADD node_modules/dunder-proto
+425 silly ADD node_modules/detect-libc
+426 silly ADD node_modules/delayed-stream
+427 silly ADD node_modules/concurrently
+428 silly ADD node_modules/combined-stream
+429 silly ADD node_modules/color-name
+430 silly ADD node_modules/color-convert
+431 silly ADD node_modules/cliui
+432 silly ADD node_modules/chalk
+433 silly ADD node_modules/chalk/node_modules/supports-color
+434 silly ADD node_modules/call-bind-apply-helpers
+435 silly ADD node_modules/axios
+436 silly ADD node_modules/asynckit
+437 silly ADD node_modules/ansi-styles
+438 silly ADD node_modules/ansi-regex
+439 silly ADD node_modules/@types/estree
+440 silly ADD node_modules/@tailwindcss/vite
+441 silly ADD
+442 silly ADD
+443 silly ADD
+444 silly ADD node_modules/@tailwindcss/oxide-linux-x64-musl
+445 silly ADD node_modules/@tailwindcss/oxide-linux-x64-gnu
+446 silly ADD
+447 silly ADD
+448 silly ADD
+449 silly ADD
+450 silly ADD
+451 silly ADD
+452 silly ADD
+453 silly ADD node_modules/@tailwindcss/oxide
+454 silly ADD node_modules/@tailwindcss/node
+455 silly ADD
+456 silly ADD
+457 silly ADD
+458 silly ADD
+459 silly ADD
+460 silly ADD
+461 silly ADD node_modules/@rollup/rollup-linux-x64-musl
+462 silly ADD node_modules/@rollup/rollup-linux-x64-gnu
+463 silly ADD
+464 silly ADD
+465 silly ADD
+466 silly ADD
+467 silly ADD
+468 silly ADD
+469 silly ADD
+470 silly ADD
+471 silly ADD
+472 silly ADD
+473 silly ADD
+474 silly ADD
+475 silly ADD
+476 silly ADD
+477 silly ADD
+478 silly ADD
+479 silly ADD
+480 silly ADD node_modules/@jridgewell/trace-mapping
+481 silly ADD node_modules/@jridgewell/sourcemap-codec
+482 silly ADD node_modules/@jridgewell/resolve-uri
+483 silly ADD node_modules/@jridgewell/remapping
+484 silly ADD node_modules/@jridgewell/gen-mapping
+485 silly ADD
+486 silly ADD
+487 silly ADD
+488 silly ADD
+489 silly ADD
+490 silly ADD
+491 silly ADD
+492 silly ADD
+493 silly ADD
+494 silly ADD node_modules/@esbuild/linux-x64
+495 silly ADD
+496 silly ADD
+497 silly ADD
+498 silly ADD
+499 silly ADD
+500 silly ADD
+501 silly ADD
+502 silly ADD
+503 silly ADD
+504 silly ADD
+505 silly ADD
+506 silly ADD
+507 silly ADD
+508 silly ADD
+509 silly ADD
+510 silly ADD
+511 verbose cwd /var/www
+512 verbose os Linux 6.8.0-146-generic
+513 verbose node v20.20.2
+514 verbose npm  v10.8.2
+515 verbose exit 0
+516 info ok
