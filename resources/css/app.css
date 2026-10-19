@@ -57,7 +57,7 @@
 
 @layer base {
     :root {
-        --font-body: "Plus Jakarta Sans", sans-serif;
+        --font-body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
         --font-heading: "Playfair Display", serif;
         --background: 40 33% 98%;
         --foreground: 210 40% 11%;
@@ -277,6 +277,7 @@ html {
 .blog-content {
     color: hsl(var(--foreground));
     line-height: 1.8;
+    font-variant-emoji: emoji;
 
     &::after {
         content: "";
@@ -364,6 +365,18 @@ html {
 
     p {
         margin-bottom: 1.25rem;
+        min-height: 1.5em;
+    }
+
+    p:empty,
+    p:has(> br:only-child) {
+        min-height: 1.5em;
+    }
+
+    p:empty::before,
+    p:has(> br:only-child)::before {
+        content: "\00a0";
+        visibility: hidden;
     }
 
     ul {

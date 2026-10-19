@@ -209,8 +209,10 @@
             height: 500,
             skin: document.documentElement.classList.contains('dark') ? 'oxide-dark' : 'oxide',
             content_css: document.documentElement.classList.contains('dark') ? 'dark' : 'default',
-            plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table code help wordcount',
-            toolbar: 'undo redo | blocks | bold italic backcolor | image link | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code fullscreen',
+            plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount emoticons',
+            toolbar: 'undo redo | blocks | bold italic backcolor | emoticons image link | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code fullscreen',
+            entity_encoding: 'raw',
+            emoticons_database: 'emojis',
             content_style: 'img { display: inline-block; vertical-align: middle; max-width: 100%; height: auto; margin: 4px; }',
             setup: function (editor) {
                 editor.on('init', function () {
